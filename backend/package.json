@@ -1,0 +1,22 @@
+{
+  "name": "dual-llm-conversation-backend",
+  "version": "1.0.0",
+  "description": "Backend server for dual LLM conversation system",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5"
+  }
+}
+
