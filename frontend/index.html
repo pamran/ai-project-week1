@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dual LLM Conversation System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <header class="app-header">
+            <h1>Dual LLM Conversation System</h1>
+            <div id="topic-display" class="topic-display" style="display: none;">
+                <strong>Topic:</strong> <span id="topic-text"></span>
+            </div>
+        </header>
+
+        <div id="error-banner" class="error-banner" style="display: none;">
+            <span id="error-message"></span>
+            <button onclick="closeError()">×</button>
+        </div>
+
+        <div class="control-panel">
+            <div id="start-section">
+                <button id="start-btn" class="control-button start-button" onclick="showStartDialog()">
+                    Start Conversation
+                </button>
+            </div>
+            <div id="control-section" style="display: none;">
+                <button id="pause-btn" class="control-button pause-button" onclick="pauseConversation()">Pause</button>
+                <button id="resume-btn" class="control-button resume-button" onclick="resumeConversation()" style="display: none;">Resume</button>
+                <button id="reset-btn" class="control-button reset-button" onclick="resetConversation()">Reset</button>
+            </div>
+        </div>
+
+        <div class="config-section">
+            <div class="config-panel">
+                <div class="config-header" onclick="toggleConfig('llm1')">
+                    <h3>LLM 1 Configuration</h3>
+                    <span class="expand-icon" id="llm1-icon">▶</span>
+                </div>
+                <div id="llm1-config" class="config-content" style="display: none;">
+                    <div class="config-field">
+                        <label>Provider:</label>
+                        <select id="llm1-provider" onchange="updateConfig('llm1', 'provider', this.value)">
+                            <option value="deepseek">DeepSeek</option>
+                            <option value="openai">OpenAI</option>
+                        </select>
+                    </div>
+                    <div class="config-field">
+                        <label>API Key:</label>
+                        <input type="password" id="llm1-apikey" placeholder="Enter API key" 
+                               onchange="updateConfig('llm1', 'apiKey', this.value)">
+                    </div>
+                    <div class="config-field">
+                        <label>Model:</label>
+                        <input type="text" id="llm1-model" value="deepseek-chat" 
+                               onchange="updateConfig('llm1', 'model', this.value)">
+                    </div>
+                    <div class="config-field">
+                        <label>Temperature: <span id="llm1-temp-value">0.7</span></label>
+                        <input type="range" id="llm1-temperature" min="0" max="2" step="0.1" value="0.7"
+                               oninput="updateTemperature('llm1', this.value)">
+                    </div>
+                    <div class="config-field">
+                        <label>Max Tokens:</label>
+                        <input type="number" id="llm1-maxtokens" min="1" max="4000" value="1000"
+                               onchange="updateConfig('llm1', 'maxTokens', parseInt(this.value))">
+                    </div>
+                    <div class="config-field">
+                        <label>System Prompt / Character:</label>
+                        <textarea id="llm1-prompt" rows="4" 
+                                  onchange="updateConfig('llm1', 'systemPrompt', this.value)">You are a helpful AI assistant.</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="config-panel">
+                <div class="config-header" onclick="toggleConfig('llm2')">
+                    <h3>LLM 2 Configuration</h3>
+                    <span class="expand-icon" id="llm2-icon">▶</span>
+                </div>
+                <div id="llm2-config" class="config-content" style="display: none;">
+                    <div class="config-field">
+                        <label>Provider:</label>
+                        <select id="llm2-provider" onchange="updateConfig('llm2', 'provider', this.value)">
+                            <option value="openai">OpenAI</option>
+                            <option value="deepseek">DeepSeek</option>
+                        </select>
+                    </div>
+                    <div class="config-field">
+                        <label>API Key:</label>
+                        <input type="password" id="llm2-apikey" placeholder="Enter API key"
+                               onchange="updateConfig('llm2', 'apiKey', this.value)">
+                    </div>
+                    <div class="config-field">
+                        <label>Model:</label>
+                        <input type="text" id="llm2-model" value="gpt-3.5-turbo"
+                               onchange="updateConfig('llm2', 'model', this.value)">
+                    </div>
+                    <div class="config-field">
+                        <label>Temperature: <span id="llm2-temp-value">0.7</span></label>
+                        <input type="range" id="llm2-temperature" min="0" max="2" step="0.1" value="0.7"
+                               oninput="updateTemperature('llm2', this.value)">
+                    </div>
+                    <div class="config-field">
+                        <label>Max Tokens:</label>
+                        <input type="number" id="llm2-maxtokens" min="1" max="4000" value="1000"
+                               onchange="updateConfig('llm2', 'maxTokens', parseInt(this.value))">
+                    </div>
+                    <div class="config-field">
+                        <label>System Prompt / Character:</label>
+                        <textarea id="llm2-prompt" rows="4"
+                                  onchange="updateConfig('llm2', 'systemPrompt', this.value)">You are a helpful AI assistant.</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="conversation-container">
+            <div id="llm1-panel" class="conversation-panel">
+                <div class="panel-header">
+                    <h2>LLM 1</h2>
+                    <div class="panel-status">
+                        <span id="llm1-thinking" class="thinking-indicator" style="display: none;">Thinking...</span>
+                        <span id="llm1-turn" class="turn-indicator" style="display: none;">Your Turn</span>
+                        <span id="llm1-paused" class="paused-indicator" style="display: none;">Paused</span>
+                        <span id="llm1-provider-badge" class="provider-badge">deepseek</span>
+                    </div>
+                </div>
+                <div class="panel-content">
+                    <div id="llm1-messages" class="message-list">
+                        <p class="empty-message">No messages yet. Start the conversation to begin!</p>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-container">
+                        <textarea id="llm1-input" placeholder="Start a conversation to begin..." 
+                                  disabled rows="3"></textarea>
+                        <button id="llm1-send" class="send-button" onclick="sendMessage('llm1')" disabled>Send</button>
+                    </div>
+                    <button class="expand-button" onclick="toggleExpand('llm1')">Expand</button>
+                </div>
+            </div>
+
+            <div id="llm2-panel" class="conversation-panel">
+                <div class="panel-header">
+                    <h2>LLM 2</h2>
+                    <div class="panel-status">
+                        <span id="llm2-thinking" class="thinking-indicator" style="display: none;">Thinking...</span>
+                        <span id="llm2-turn" class="turn-indicator" style="display: none;">Your Turn</span>
+                        <span id="llm2-paused" class="paused-indicator" style="display: none;">Paused</span>
+                        <span id="llm2-provider-badge" class="provider-badge">openai</span>
+                    </div>
+                </div>
+                <div class="panel-content">
+                    <div id="llm2-messages" class="message-list">
+                        <p class="empty-message">No messages yet. Start the conversation to begin!</p>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-container">
+                        <textarea id="llm2-input" placeholder="Start a conversation to begin..." 
+                                  disabled rows="3"></textarea>
+                        <button id="llm2-send" class="send-button" onclick="sendMessage('llm2')" disabled>Send</button>
+                    </div>
+                    <button class="expand-button" onclick="toggleExpand('llm2')">Expand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Conversation Dialog -->
+    <div id="start-dialog-overlay" class="start-dialog-overlay" style="display: none;" onclick="closeStartDialog()">
+        <div class="start-dialog" onclick="event.stopPropagation()">
+            <h3>Start New Conversation</h3>
+            <div class="dialog-field">
+                <label>Conversation Topic / Prompt:</label>
+                <textarea id="topic-input" placeholder="e.g., What is the nature of consciousness?" rows="3"></textarea>
+            </div>
+            <div class="dialog-field">
+                <label>Starting LLM:</label>
+                <select id="starting-llm">
+                    <option value="llm1">LLM 1</option>
+                    <option value="llm2">LLM 2</option>
+                </select>
+            </div>
+            <div class="dialog-buttons">
+                <button class="dialog-button primary" onclick="startConversation()">Start</button>
+                <button class="dialog-button" onclick="closeStartDialog()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
