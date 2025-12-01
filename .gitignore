@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# macOS metadata files
+.__*
+._*
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log
+backend/logs/
+backend/server.log
+backend/server.pid
+frontend_server.pid
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (if any)
+node_modules/
+
+# Build files
+dist/
+build/
+*.egg-info/
+
