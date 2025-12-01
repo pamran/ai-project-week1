@@ -10,13 +10,10 @@ Werkzeug appears to be used in a production deployment. Consider switching to a 
 Werkzeug appears to be used in a production deployment. Consider switching to a production web server instead.
  * Debugger is active!
  * Debugger PIN: 132-986-494
-127.0.0.1 - - [30/Nov/2025 17:05:51] "GET /socket.io/?EIO=4&transport=polling&t=PhN0_Bh HTTP/1.1" 200 -
-127.0.0.1 - - [30/Nov/2025 17:05:51] "POST /socket.io/?EIO=4&transport=polling&t=PhN0_Bp&sid=rU5B318oZrJmxioeAAAA HTTP/1.1" 200 -
-127.0.0.1 - - [30/Nov/2025 17:05:51] "GET /socket.io/?EIO=4&transport=polling&t=PhN0_Bt&sid=rU5B318oZrJmxioeAAAA HTTP/1.1" 200 -
-127.0.0.1 - - [30/Nov/2025 17:05:53] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [30/Nov/2025 17:05:57] "GET /socket.io/?EIO=4&transport=websocket&sid=rU5B318oZrJmxioeAAAA HTTP/1.1" 200 -
-127.0.0.1 - - [30/Nov/2025 17:05:57] "GET /socket.io/?EIO=4&transport=polling&t=PhN10db HTTP/1.1" 200 -
-127.0.0.1 - - [30/Nov/2025 17:05:57] "POST /socket.io/?EIO=4&transport=polling&t=PhN10dq&sid=L3BvTvjQWdQXpi0IAAAC HTTP/1.1" 200 -
-127.0.0.1 - - [30/Nov/2025 17:05:57] "GET /socket.io/?EIO=4&transport=polling&t=PhN10dv&sid=L3BvTvjQWdQXpi0IAAAC HTTP/1.1" 200 -
-127.0.0.1 - - [30/Nov/2025 17:05:57] "GET /socket.io/?EIO=4&transport=polling&t=PhN10d_&sid=L3BvTvjQWdQXpi0IAAAC HTTP/1.1" 200 -
-127.0.0.1 - - [30/Nov/2025 17:05:57] "POST /socket.io/?EIO=4&transport=polling&t=PhN10e1&sid=L3BvTvjQWdQXpi0IAAAC HTTP/1.1" 200 -
+127.0.0.1 - - [01/Dec/2025 08:33:45] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [01/Dec/2025 08:33:51] "GET /socket.io/?EIO=4&transport=polling&t=PhQLOp0 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Dec/2025 08:33:51] "POST /socket.io/?EIO=4&transport=polling&t=PhQLOpD&sid=wI5zkfPuzw5gHAHdAAAA HTTP/1.1" 200 -
+127.0.0.1 - - [01/Dec/2025 08:33:51] "GET /socket.io/?EIO=4&transport=polling&t=PhQLOpJ&sid=wI5zkfPuzw5gHAHdAAAA HTTP/1.1" 200 -
+127.0.0.1 - - [01/Dec/2025 08:33:51] "GET /socket.io/?EIO=4&transport=polling&t=PhQLOpO&sid=wI5zkfPuzw5gHAHdAAAA HTTP/1.1" 200 -
+127.0.0.1 - - [01/Dec/2025 08:33:51] "POST /socket.io/?EIO=4&transport=polling&t=PhQLOpS&sid=wI5zkfPuzw5gHAHdAAAA HTTP/1.1" 200 -
+127.0.0.1 - - [01/Dec/2025 08:33:51] "GET /socket.io/?EIO=4&transport=polling&t=PhQLOpV&sid=wI5zkfPuzw5gHAHdAAAA HTTP/1.1" 200 -
