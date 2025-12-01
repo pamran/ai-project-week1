@@ -13,7 +13,8 @@ class OpenAIService:
         
         # Mask API key for logging (show only last 4 chars)
         masked_key = f"{'*' * (len(self.api_key) - 4)}{self.api_key[-4:]}" if len(self.api_key) > 4 else "****"
-        self.logger.info(f"OpenAIService initialized with OpenRouter API key: {masked_key}")
+        self.logger.info(f"🔑 OpenAI Service initialized")
+        self.logger.info(f"   API Key: {masked_key} (length: {len(self.api_key)})")
     
     def generate_response(self, messages, options=None):
         if options is None:
@@ -37,9 +38,12 @@ class OpenAIService:
                 model = 'openai/gpt-3.5-turbo'
             
             if original_model != model:
-                self.logger.info(f"Model name auto-corrected: '{original_model}' -> '{model}'")
+                self.logger.info(f"🔧 Model name auto-corrected: '{original_model}' → '{model}'")
         
-        self.logger.debug(f"Generating response - Model: {model}, Temperature: {temperature}, Max tokens: {max_tokens}")
+        self.logger.info(f"⚙️  Request Parameters:")
+        self.logger.info(f"   Model: {model}")
+        self.logger.info(f"   Temperature: {temperature}")
+        self.logger.info(f"   Max Tokens: {max_tokens}")
         
         try:
             # Verify API key is set and valid before making the call
@@ -90,9 +94,13 @@ class OpenAIService:
                     langchain_messages.append(AIMessage(content=content))
             
             # Generate response
-            self.logger.info(f"Invoking LLM with {len(langchain_messages)} messages")
+            self.logger.info(f"📡 Calling OpenAI API via OpenRouter...")
+            self.logger.info(f"   Sending {len(langchain_messages)} messages")
+            import time
+            start_time = time.time()
             response = llm.invoke(langchain_messages)
-            self.logger.info(f"LLM response received successfully")
+            elapsed_time = time.time() - start_time
+            self.logger.info(f"✅ API call completed in {elapsed_time:.2f} seconds")
             
             # Extract response content
             response_content = response.content if hasattr(response, 'content') else str(response)
@@ -104,7 +112,7 @@ class OpenAIService:
                 if usage:
                     self.logger.debug(f"Token usage: {usage}")
             
-            self.logger.info(f"Response generated - Length: {len(response_content)} chars")
+            self.logger.info(f"📝 Response generated: {len(response_content)} characters")
             
             return {
                 'content': response_content,
@@ -113,17 +121,29 @@ class OpenAIService:
             }
         except Exception as e:
             error_msg = str(e)
-            self.logger.error(f"OpenAI API error: {error_msg}", exc_info=True)
+            self.logger.error("")
+            self.logger.error("=" * 70)
+            self.logger.error(f"❌ OPENAI API ERROR")
+            self.logger.error(f"   Error: {error_msg}")
+            self.logger.error("=" * 70)
+            self.logger.error("", exc_info=True)
             
             # Handle specific LangChain/API errors
             if 'api_key' in error_msg.lower() or 'authentication' in error_msg.lower() or '401' in error_msg or 'cookie' in error_msg.lower():
-                self.logger.error("Authentication error detected - Check API key")
+                self.logger.error("🔑 AUTHENTICATION ERROR")
+                self.logger.error("   → Check your OpenRouter API key")
+                self.logger.error("   → Make sure key starts with 'sk-or-v1-'")
+                self.logger.error("   → Verify key is complete (30+ characters)")
                 raise Exception(f'OpenRouter API authentication error: {error_msg}')
             elif 'rate limit' in error_msg.lower() or 'quota' in error_msg.lower():
-                self.logger.error("Rate limit/quota error detected")
+                self.logger.error("⏱️  RATE LIMIT / QUOTA ERROR")
+                self.logger.error("   → Check your OpenRouter account credits")
+                self.logger.error("   → Visit: https://openrouter.ai/activity")
                 raise Exception(f'OpenRouter API rate limit/quota exceeded: {error_msg}')
             elif 'billing' in error_msg.lower() or 'payment' in error_msg.lower():
-                self.logger.error("Billing error detected")
+                self.logger.error("💳 BILLING ERROR")
+                self.logger.error("   → Add credits to your OpenRouter account")
+                self.logger.error("   → Visit: https://openrouter.ai/activity")
                 raise Exception(f'OpenRouter billing error: {error_msg}')
             else:
                 raise Exception(f'OpenRouter API error: {error_msg}')

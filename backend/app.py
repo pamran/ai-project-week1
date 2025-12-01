@@ -37,12 +37,19 @@ def api_health():
 
 @socketio.on('connect')
 def handle_connect():
-    logger.info(f"Client connected: {request.sid} from {request.remote_addr}")
+    logger.info("")
+    logger.info("🌐 NEW CLIENT CONNECTED")
+    logger.info(f"   Session ID: {request.sid}")
+    logger.info(f"   IP Address: {request.remote_addr}")
+    logger.info("")
     emit('connected', {'message': 'Connected to server'})
 
 @socketio.on('disconnect')
 def handle_disconnect():
-    logger.info(f"Client disconnected: {request.sid}")
+    logger.info("")
+    logger.info("👋 CLIENT DISCONNECTED")
+    logger.info(f"   Session ID: {request.sid}")
+    logger.info("")
 
 @socketio.on('conversation:start')
 def handle_conversation_start(data):
@@ -52,15 +59,19 @@ def handle_conversation_start(data):
         llm1_config = data.get('llm1Config')
         llm2_config = data.get('llm2Config')
         
-        logger.info(f"Starting conversation - Topic: '{topic}', Starting LLM: {starting_llm}")
-        logger.debug(f"LLM1 Config - Provider: {llm1_config.get('provider')}, Model: {llm1_config.get('model')}")
-        logger.debug(f"LLM2 Config - Provider: {llm2_config.get('provider')}, Model: {llm2_config.get('model')}")
+        logger.info("")
+        logger.info("📨 CONVERSATION START REQUEST RECEIVED")
+        logger.info(f"   Topic: '{topic}'")
+        logger.info(f"   Starting LLM: {starting_llm.upper()}")
+        logger.info("")
         
         conversation_manager.start_conversation(
             topic, starting_llm, llm1_config, llm2_config
         )
         
-        logger.info(f"Conversation started successfully - Topic: '{topic}'")
+        logger.info("")
+        logger.info("✅ CONVERSATION STARTED SUCCESSFULLY")
+        logger.info("")
         
         emit('conversation:started', {
             'topic': topic,
@@ -77,36 +88,42 @@ def handle_message_send(data):
         llm_id = data.get('llmId')
         message = data.get('message')
         
-        logger.info(f"Message received from {llm_id} - Length: {len(message)} chars")
-        logger.debug(f"Message content: {message[:100]}..." if len(message) > 100 else f"Message content: {message}")
+        logger.info("")
+        logger.info(f"📨 MESSAGE RECEIVED FROM {llm_id.upper()}")
+        logger.info(f"   Length: {len(message)} characters")
         
         conversation_manager.send_message(llm_id, message)
         
-        logger.info(f"Message processed successfully for {llm_id}")
+        logger.info(f"✅ Message processed successfully for {llm_id.upper()}")
+        logger.info("")
     except Exception as e:
         logger.error(f"Failed to send message from {llm_id}: {str(e)}", exc_info=True)
         emit('error', {'message': str(e)})
 
 @socketio.on('conversation:reset')
 def handle_conversation_reset():
-    logger.info("Conversation reset requested")
+    logger.info("")
+    logger.info("🔄 CONVERSATION RESET REQUESTED")
     conversation_manager.reset()
     socketio.emit('conversation:reset')
-    logger.info("Conversation reset completed")
+    logger.info("✅ Conversation reset completed")
+    logger.info("")
 
 @socketio.on('conversation:pause')
 def handle_conversation_pause():
-    logger.info("Conversation pause requested")
+    logger.info("")
+    logger.info("⏸️  CONVERSATION PAUSE REQUESTED")
     conversation_manager.pause()
     socketio.emit('conversation:paused')
-    logger.info("Conversation paused")
+    logger.info("")
 
 @socketio.on('conversation:resume')
 def handle_conversation_resume():
-    logger.info("Conversation resume requested")
+    logger.info("")
+    logger.info("▶️  CONVERSATION RESUME REQUESTED")
     conversation_manager.resume()
     socketio.emit('conversation:resumed')
-    logger.info("Conversation resumed")
+    logger.info("")
 
 @socketio.on('conversation:getState')
 def handle_get_state():

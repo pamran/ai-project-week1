@@ -32,6 +32,7 @@ def setup_logger(name='dual_llm_app', log_level=logging.INFO):
         datefmt='%Y-%m-%d %H:%M:%S'
     )
     
+    # Enhanced console formatter with emojis and better readability
     console_formatter = logging.Formatter(
         '%(asctime)s | %(levelname)-8s | %(message)s',
         datefmt='%H:%M:%S'

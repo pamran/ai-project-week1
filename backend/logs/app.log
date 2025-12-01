@@ -1568,3 +1568,690 @@ Exception: OpenAI API rate limit/quota exceeded: Error code: 429 - {'error': {'m
 2025-12-01 09:23:51 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
 2025-12-01 09:23:51 | INFO     | dual_llm_app | <module>:126 | Environment: Production
 2025-12-01 09:23:51 | INFO     | dual_llm_app | handle_connect:40 | Client connected: 6SSRvV52eixRklopAAAB from 127.0.0.1
+2025-12-01 09:25:43 | INFO     | dual_llm_app | handle_conversation_start:55 | Starting conversation - Topic: 'planets', Starting LLM: llm1
+2025-12-01 09:25:43 | INFO     | dual_llm_app | start_conversation:24 | Starting conversation - Topic: 'planets', Starting LLM: llm1
+2025-12-01 09:25:43 | INFO     | dual_llm_app | start_conversation:72 | Initializing LLM1 service - Provider: deepseek
+2025-12-01 09:25:43 | INFO     | services.deepseek_service | __init__:16 | DeepSeekService initialized with API key: *********************************************************************8096
+2025-12-01 09:25:43 | INFO     | dual_llm_app | start_conversation:76 | LLM1 service initialized successfully
+2025-12-01 09:25:43 | INFO     | dual_llm_app | start_conversation:78 | Initializing LLM2 service - Provider: openai
+2025-12-01 09:25:43 | INFO     | services.openai_service | __init__:16 | OpenAIService initialized with OpenRouter API key: *********************************************************************67d5
+2025-12-01 09:25:43 | INFO     | dual_llm_app | start_conversation:82 | LLM2 service initialized successfully
+2025-12-01 09:25:43 | INFO     | dual_llm_app | start_conversation:104 | Auto-starting conversation with llm1
+2025-12-01 09:25:43 | INFO     | dual_llm_app | handle_conversation_start:63 | Conversation started successfully - Topic: 'planets'
+2025-12-01 09:25:44 | INFO     | dual_llm_app | send_message:120 | Processing message from llm1 - Length: 22 chars
+2025-12-01 09:25:44 | INFO     | dual_llm_app | send_message:181 | Calling llm1 API (Model: deepseek-chat)...
+2025-12-01 09:25:44 | INFO     | services.deepseek_service | generate_response:40 | Model name auto-corrected: 'deepseek-chat' -> 'deepseek/deepseek-chat'
+2025-12-01 09:25:44 | INFO     | services.deepseek_service | generate_response:53 | Using OpenRouter API key: *********************************************************************8096 (length: 73)
+2025-12-01 09:25:44 | INFO     | services.deepseek_service | generate_response:95 | Invoking LLM with 2 messages
+2025-12-01 09:25:44 | ERROR    | services.deepseek_service | generate_response:118 | DeepSeek API error: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/deepseek_service.py", line 96, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+2025-12-01 09:25:44 | ERROR    | services.deepseek_service | generate_response:122 | Authentication error detected - Check API key
+2025-12-01 09:25:44 | ERROR    | dual_llm_app | send_message:235 | Error processing message from llm1: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/deepseek_service.py", line 96, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/deepseek_service.py", line 123, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+2025-12-01 09:26:00 | INFO     | dual_llm_app | handle_conversation_reset:92 | Conversation reset requested
+2025-12-01 09:26:00 | INFO     | dual_llm_app | handle_conversation_reset:95 | Conversation reset completed
+2025-12-01 09:26:06 | INFO     | dual_llm_app | handle_conversation_start:55 | Starting conversation - Topic: 'eggs', Starting LLM: llm2
+2025-12-01 09:26:06 | INFO     | dual_llm_app | start_conversation:24 | Starting conversation - Topic: 'eggs', Starting LLM: llm2
+2025-12-01 09:26:06 | INFO     | dual_llm_app | start_conversation:72 | Initializing LLM1 service - Provider: deepseek
+2025-12-01 09:26:06 | INFO     | services.deepseek_service | __init__:16 | DeepSeekService initialized with API key: *********************************************************************8096
+2025-12-01 09:26:06 | INFO     | dual_llm_app | start_conversation:76 | LLM1 service initialized successfully
+2025-12-01 09:26:06 | INFO     | dual_llm_app | start_conversation:78 | Initializing LLM2 service - Provider: openai
+2025-12-01 09:26:06 | INFO     | services.openai_service | __init__:16 | OpenAIService initialized with OpenRouter API key: *********************************************************************67d5
+2025-12-01 09:26:06 | INFO     | dual_llm_app | start_conversation:82 | LLM2 service initialized successfully
+2025-12-01 09:26:06 | INFO     | dual_llm_app | start_conversation:104 | Auto-starting conversation with llm2
+2025-12-01 09:26:06 | INFO     | dual_llm_app | handle_conversation_start:63 | Conversation started successfully - Topic: 'eggs'
+2025-12-01 09:26:06 | INFO     | dual_llm_app | send_message:120 | Processing message from llm2 - Length: 19 chars
+2025-12-01 09:26:06 | INFO     | dual_llm_app | send_message:181 | Calling llm2 API (Model: gpt-3.5-turbo)...
+2025-12-01 09:26:06 | INFO     | services.openai_service | generate_response:40 | Model name auto-corrected: 'gpt-3.5-turbo' -> 'openai/gpt-3.5-turbo'
+2025-12-01 09:26:06 | INFO     | services.openai_service | generate_response:53 | Using OpenRouter API key: *********************************************************************67d5 (length: 73)
+2025-12-01 09:26:06 | INFO     | services.openai_service | generate_response:93 | Invoking LLM with 2 messages
+2025-12-01 09:26:06 | ERROR    | services.openai_service | generate_response:116 | OpenAI API error: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 94, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+2025-12-01 09:26:06 | ERROR    | services.openai_service | generate_response:120 | Authentication error detected - Check API key
+2025-12-01 09:26:06 | ERROR    | dual_llm_app | send_message:235 | Error processing message from llm2: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 94, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 121, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+2025-12-01 09:26:58 | INFO     | dual_llm_app | handle_conversation_reset:92 | Conversation reset requested
+2025-12-01 09:26:58 | INFO     | dual_llm_app | handle_conversation_reset:95 | Conversation reset completed
+2025-12-01 09:27:03 | INFO     | dual_llm_app | handle_conversation_start:55 | Starting conversation - Topic: 'eggs', Starting LLM: llm2
+2025-12-01 09:27:03 | INFO     | dual_llm_app | start_conversation:24 | Starting conversation - Topic: 'eggs', Starting LLM: llm2
+2025-12-01 09:27:03 | INFO     | dual_llm_app | start_conversation:72 | Initializing LLM1 service - Provider: deepseek
+2025-12-01 09:27:03 | INFO     | services.deepseek_service | __init__:16 | DeepSeekService initialized with API key: *********************************************************************2565
+2025-12-01 09:27:03 | INFO     | dual_llm_app | start_conversation:76 | LLM1 service initialized successfully
+2025-12-01 09:27:03 | INFO     | dual_llm_app | start_conversation:78 | Initializing LLM2 service - Provider: openai
+2025-12-01 09:27:03 | INFO     | services.openai_service | __init__:16 | OpenAIService initialized with OpenRouter API key: *********************************************************************2565
+2025-12-01 09:27:03 | INFO     | dual_llm_app | start_conversation:82 | LLM2 service initialized successfully
+2025-12-01 09:27:03 | INFO     | dual_llm_app | start_conversation:104 | Auto-starting conversation with llm2
+2025-12-01 09:27:03 | INFO     | dual_llm_app | handle_conversation_start:63 | Conversation started successfully - Topic: 'eggs'
+2025-12-01 09:27:04 | INFO     | dual_llm_app | send_message:120 | Processing message from llm2 - Length: 19 chars
+2025-12-01 09:27:04 | INFO     | dual_llm_app | send_message:181 | Calling llm2 API (Model: gpt-3.5-turbo)...
+2025-12-01 09:27:04 | INFO     | services.openai_service | generate_response:40 | Model name auto-corrected: 'gpt-3.5-turbo' -> 'openai/gpt-3.5-turbo'
+2025-12-01 09:27:04 | INFO     | services.openai_service | generate_response:53 | Using OpenRouter API key: *********************************************************************2565 (length: 73)
+2025-12-01 09:27:04 | INFO     | services.openai_service | generate_response:93 | Invoking LLM with 2 messages
+2025-12-01 09:27:06 | INFO     | services.openai_service | generate_response:95 | LLM response received successfully
+2025-12-01 09:27:06 | INFO     | services.openai_service | generate_response:107 | Response generated - Length: 307 chars
+2025-12-01 09:27:06 | INFO     | dual_llm_app | send_message:188 | Received response from llm2 - Length: 307 chars
+2025-12-01 09:27:06 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm1
+2025-12-01 09:27:06 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm1 will respond to previous message
+2025-12-01 09:27:07 | INFO     | dual_llm_app | continue_conversation:256 | Auto-continuing conversation: llm1 responding to message
+2025-12-01 09:27:07 | INFO     | dual_llm_app | send_message:120 | Processing message from llm1 - Length: 307 chars
+2025-12-01 09:27:07 | INFO     | dual_llm_app | send_message:181 | Calling llm1 API (Model: deepseek-chat)...
+2025-12-01 09:27:07 | INFO     | services.deepseek_service | generate_response:40 | Model name auto-corrected: 'deepseek-chat' -> 'deepseek/deepseek-chat'
+2025-12-01 09:27:07 | INFO     | services.deepseek_service | generate_response:53 | Using OpenRouter API key: *********************************************************************2565 (length: 73)
+2025-12-01 09:27:07 | INFO     | services.deepseek_service | generate_response:95 | Invoking LLM with 4 messages
+2025-12-01 09:27:25 | INFO     | services.deepseek_service | generate_response:97 | LLM response received successfully
+2025-12-01 09:27:25 | INFO     | services.deepseek_service | generate_response:109 | Response generated - Length: 3159 chars
+2025-12-01 09:27:25 | INFO     | dual_llm_app | send_message:188 | Received response from llm1 - Length: 3159 chars
+2025-12-01 09:27:25 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm2
+2025-12-01 09:27:25 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm2 will respond to previous message
+2025-12-01 09:27:26 | INFO     | dual_llm_app | continue_conversation:256 | Auto-continuing conversation: llm2 responding to message
+2025-12-01 09:27:26 | INFO     | dual_llm_app | send_message:120 | Processing message from llm2 - Length: 3159 chars
+2025-12-01 09:27:26 | INFO     | dual_llm_app | send_message:181 | Calling llm2 API (Model: gpt-3.5-turbo)...
+2025-12-01 09:27:26 | INFO     | services.openai_service | generate_response:40 | Model name auto-corrected: 'gpt-3.5-turbo' -> 'openai/gpt-3.5-turbo'
+2025-12-01 09:27:26 | INFO     | services.openai_service | generate_response:53 | Using OpenRouter API key: *********************************************************************2565 (length: 73)
+2025-12-01 09:27:26 | INFO     | services.openai_service | generate_response:93 | Invoking LLM with 6 messages
+2025-12-01 09:27:28 | INFO     | services.openai_service | generate_response:95 | LLM response received successfully
+2025-12-01 09:27:28 | INFO     | services.openai_service | generate_response:107 | Response generated - Length: 253 chars
+2025-12-01 09:27:28 | INFO     | dual_llm_app | send_message:188 | Received response from llm2 - Length: 253 chars
+2025-12-01 09:27:28 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm1
+2025-12-01 09:27:28 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm1 will respond to previous message
+2025-12-01 09:27:29 | INFO     | dual_llm_app | continue_conversation:256 | Auto-continuing conversation: llm1 responding to message
+2025-12-01 09:27:29 | INFO     | dual_llm_app | send_message:120 | Processing message from llm1 - Length: 253 chars
+2025-12-01 09:27:29 | INFO     | dual_llm_app | send_message:181 | Calling llm1 API (Model: deepseek-chat)...
+2025-12-01 09:27:29 | INFO     | services.deepseek_service | generate_response:40 | Model name auto-corrected: 'deepseek-chat' -> 'deepseek/deepseek-chat'
+2025-12-01 09:27:29 | INFO     | services.deepseek_service | generate_response:53 | Using OpenRouter API key: *********************************************************************2565 (length: 73)
+2025-12-01 09:27:29 | INFO     | services.deepseek_service | generate_response:95 | Invoking LLM with 8 messages
+2025-12-01 09:27:38 | INFO     | dual_llm_app | handle_conversation_pause:99 | Conversation pause requested
+2025-12-01 09:27:38 | INFO     | dual_llm_app | pause:281 | Conversation paused - auto-continuation stopped
+2025-12-01 09:27:38 | INFO     | dual_llm_app | handle_conversation_pause:102 | Conversation paused
+2025-12-01 09:27:41 | INFO     | services.deepseek_service | generate_response:97 | LLM response received successfully
+2025-12-01 09:27:41 | INFO     | services.deepseek_service | generate_response:109 | Response generated - Length: 1251 chars
+2025-12-01 09:27:41 | INFO     | dual_llm_app | send_message:188 | Received response from llm1 - Length: 1251 chars
+2025-12-01 09:27:41 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm2
+2025-12-01 09:35:23 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:35:23 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:35:23 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:35:23 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:35:23 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:35:23 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:35:23 | INFO     | dual_llm_app | handle_connect:40 | Client connected: hyMBS616Uzkx5DIQAAAB from 127.0.0.1
+2025-12-01 09:35:26 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:35:26 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:35:26 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:35:26 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:35:26 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:35:26 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:35:26 | INFO     | dual_llm_app | handle_connect:40 | Client connected: jJLFMQcpIRb7KuFGAAAB from 127.0.0.1
+2025-12-01 09:35:28 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:35:28 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:35:28 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:35:28 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:35:28 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:35:28 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:35:29 | INFO     | dual_llm_app | handle_connect:40 | Client connected: rTPGS6svrq41Vh-kAAAB from 127.0.0.1
+2025-12-01 09:35:34 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:35:34 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:35:34 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:35:34 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:35:34 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:35:34 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:35:35 | INFO     | dual_llm_app | handle_connect:40 | Client connected: jzkvegVPgUni-E2SAAAB from 127.0.0.1
+2025-12-01 09:35:38 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:35:38 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:35:38 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:35:38 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:35:38 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:35:38 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:35:39 | INFO     | dual_llm_app | handle_connect:40 | Client connected: U1-UmF5Yuw054crEAAAB from 127.0.0.1
+2025-12-01 09:35:42 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:35:42 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:35:42 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:35:42 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:35:42 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:35:42 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:35:42 | INFO     | dual_llm_app | handle_connect:40 | Client connected: 5r4ZP-TkqDPaCPqlAAAB from 127.0.0.1
+2025-12-01 09:35:51 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:35:51 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:35:51 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:35:51 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:35:51 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:35:51 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:35:52 | INFO     | dual_llm_app | handle_connect:40 | Client connected: JHPZ1toGDooU1RvrAAAB from 127.0.0.1
+2025-12-01 09:36:00 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:00 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:00 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:00 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:00 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:36:00 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:36:00 | INFO     | dual_llm_app | handle_connect:40 | Client connected: -9WIjcOGnPDG3lmtAAAB from 127.0.0.1
+2025-12-01 09:36:06 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:06 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:06 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:06 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:06 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:36:06 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:36:07 | INFO     | dual_llm_app | handle_connect:40 | Client connected: WVCKuE2pcGp4XCH2AAAB from 127.0.0.1
+2025-12-01 09:36:10 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:10 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:10 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:10 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:10 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:36:10 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:36:10 | INFO     | dual_llm_app | handle_connect:40 | Client connected: 9QAI6h5Av6NqLAxtAAAB from 127.0.0.1
+2025-12-01 09:36:13 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:13 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:13 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:13 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:13 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:36:13 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:36:13 | INFO     | dual_llm_app | handle_connect:40 | Client connected: 9XwpkAozi-MIhUFRAAAB from 127.0.0.1
+2025-12-01 09:36:15 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:15 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:15 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:15 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:15 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:36:15 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:36:17 | INFO     | dual_llm_app | handle_connect:40 | Client connected: 5XcQSCMhHLw-pGwNAAAB from 127.0.0.1
+2025-12-01 09:36:19 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:19 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:19 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:19 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:19 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:36:19 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:36:19 | INFO     | dual_llm_app | handle_connect:40 | Client connected: 5Lpb7X7y4x9D39CRAAAB from 127.0.0.1
+2025-12-01 09:36:22 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:22 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:22 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:22 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:22 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:36:22 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:36:23 | INFO     | dual_llm_app | handle_connect:40 | Client connected: G3mBBRiapYMxoKY9AAAB from 127.0.0.1
+2025-12-01 09:36:25 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:25 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:25 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:25 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:25 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:36:25 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:36:26 | INFO     | dual_llm_app | handle_connect:40 | Client connected: V-qJwBGVLYkGmYyzAAAB from 127.0.0.1
+2025-12-01 09:36:28 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:28 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:28 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:28 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:28 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:36:28 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:36:29 | INFO     | dual_llm_app | handle_connect:40 | Client connected: MK3B6f9LfX-v5RO0AAAB from 127.0.0.1
+2025-12-01 09:36:29 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:29 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:29 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:29 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:29 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:36:29 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:36:30 | INFO     | dual_llm_app | handle_connect:40 | Client connected: NbbKSplTFlggOZ9nAAAB from 127.0.0.1
+2025-12-01 09:36:33 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:33 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:33 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:33 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:33 | INFO     | dual_llm_app | <module>:132 | Starting server on port 3000
+2025-12-01 09:36:33 | INFO     | dual_llm_app | <module>:133 | Environment: Production
+2025-12-01 09:36:34 | INFO     | dual_llm_app | handle_connect:40 | 
+2025-12-01 09:36:34 | INFO     | dual_llm_app | handle_connect:41 | 🌐 NEW CLIENT CONNECTED
+2025-12-01 09:36:34 | INFO     | dual_llm_app | handle_connect:42 |    Session ID: Ctvo985esfBOxpwZAAAB
+2025-12-01 09:36:34 | INFO     | dual_llm_app | handle_connect:43 |    IP Address: 127.0.0.1
+2025-12-01 09:36:34 | INFO     | dual_llm_app | handle_connect:44 | 
+2025-12-01 09:36:36 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:36 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:36 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:36 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:36 | INFO     | dual_llm_app | <module>:134 | Starting server on port 3000
+2025-12-01 09:36:36 | INFO     | dual_llm_app | <module>:135 | Environment: Production
+2025-12-01 09:36:37 | INFO     | dual_llm_app | handle_connect:40 | 
+2025-12-01 09:36:37 | INFO     | dual_llm_app | handle_connect:41 | 🌐 NEW CLIENT CONNECTED
+2025-12-01 09:36:37 | INFO     | dual_llm_app | handle_connect:42 |    Session ID: P_Y0JaZ8IBlzMJYPAAAB
+2025-12-01 09:36:37 | INFO     | dual_llm_app | handle_connect:43 |    IP Address: 127.0.0.1
+2025-12-01 09:36:37 | INFO     | dual_llm_app | handle_connect:44 | 
+2025-12-01 09:36:39 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:39 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:39 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:39 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:39 | INFO     | dual_llm_app | <module>:137 | Starting server on port 3000
+2025-12-01 09:36:39 | INFO     | dual_llm_app | <module>:138 | Environment: Production
+2025-12-01 09:36:39 | INFO     | dual_llm_app | handle_connect:40 | 
+2025-12-01 09:36:39 | INFO     | dual_llm_app | handle_connect:41 | 🌐 NEW CLIENT CONNECTED
+2025-12-01 09:36:39 | INFO     | dual_llm_app | handle_connect:42 |    Session ID: lrTwJY3otSIiU-scAAAB
+2025-12-01 09:36:39 | INFO     | dual_llm_app | handle_connect:43 |    IP Address: 127.0.0.1
+2025-12-01 09:36:39 | INFO     | dual_llm_app | handle_connect:44 | 
+2025-12-01 09:36:45 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:45 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:45 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:45 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:45 | INFO     | dual_llm_app | <module>:142 | Starting server on port 3000
+2025-12-01 09:36:45 | INFO     | dual_llm_app | <module>:143 | Environment: Production
+2025-12-01 09:36:46 | INFO     | dual_llm_app | handle_connect:40 | 
+2025-12-01 09:36:46 | INFO     | dual_llm_app | handle_connect:41 | 🌐 NEW CLIENT CONNECTED
+2025-12-01 09:36:46 | INFO     | dual_llm_app | handle_connect:42 |    Session ID: O965PXTVh9cu3sw8AAAB
+2025-12-01 09:36:46 | INFO     | dual_llm_app | handle_connect:43 |    IP Address: 127.0.0.1
+2025-12-01 09:36:46 | INFO     | dual_llm_app | handle_connect:44 | 
+2025-12-01 09:36:54 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:36:54 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:36:54 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:36:54 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:36:54 | INFO     | dual_llm_app | <module>:142 | Starting server on port 3000
+2025-12-01 09:36:54 | INFO     | dual_llm_app | <module>:143 | Environment: Production
+2025-12-01 09:36:55 | INFO     | dual_llm_app | handle_connect:40 | 
+2025-12-01 09:36:55 | INFO     | dual_llm_app | handle_connect:41 | 🌐 NEW CLIENT CONNECTED
+2025-12-01 09:36:55 | INFO     | dual_llm_app | handle_connect:42 |    Session ID: GEs1GLPYJS-tIx7lAAAB
+2025-12-01 09:36:55 | INFO     | dual_llm_app | handle_connect:43 |    IP Address: 127.0.0.1
+2025-12-01 09:36:55 | INFO     | dual_llm_app | handle_connect:44 | 
+2025-12-01 09:37:03 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:37:03 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:37:03 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:37:03 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:37:03 | INFO     | dual_llm_app | <module>:142 | Starting server on port 3000
+2025-12-01 09:37:03 | INFO     | dual_llm_app | <module>:143 | Environment: Production
+2025-12-01 09:37:03 | INFO     | dual_llm_app | handle_connect:40 | 
+2025-12-01 09:37:03 | INFO     | dual_llm_app | handle_connect:41 | 🌐 NEW CLIENT CONNECTED
+2025-12-01 09:37:03 | INFO     | dual_llm_app | handle_connect:42 |    Session ID: PDuvmUnIEFj6iI8FAAAB
+2025-12-01 09:37:03 | INFO     | dual_llm_app | handle_connect:43 |    IP Address: 127.0.0.1
+2025-12-01 09:37:03 | INFO     | dual_llm_app | handle_connect:44 | 
+2025-12-01 09:37:11 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:37:11 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:37:11 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:37:11 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:37:11 | INFO     | dual_llm_app | <module>:142 | Starting server on port 3000
+2025-12-01 09:37:11 | INFO     | dual_llm_app | <module>:143 | Environment: Production
+2025-12-01 09:37:33 | INFO     | dual_llm_app | handle_conversation_start:62 | 
+2025-12-01 09:37:33 | INFO     | dual_llm_app | handle_conversation_start:63 | 📨 CONVERSATION START REQUEST RECEIVED
+2025-12-01 09:37:33 | INFO     | dual_llm_app | handle_conversation_start:64 |    Topic: 'ai'
+2025-12-01 09:37:33 | INFO     | dual_llm_app | handle_conversation_start:65 |    Starting LLM: LLM1
+2025-12-01 09:37:33 | INFO     | dual_llm_app | handle_conversation_start:66 | 
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:24 | ======================================================================
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:25 | 🚀 STARTING NEW CONVERSATION
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:26 |    Topic: 'ai'
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:27 |    Starting LLM: LLM1
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:28 | ======================================================================
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:54 | 📋 LLM Configuration:
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:55 |    LLM1: Provider=deepseek, Model=deepseek-chat, Temp=0.7
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:56 |    LLM2: Provider=openai, Model=gpt-3.5-turbo, Temp=0.7
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:77 | 
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:78 | 🔧 Initializing LLM Services...
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:79 |    → LLM1 (deepseek): Connecting to API...
+2025-12-01 09:37:33 | INFO     | services.deepseek_service | __init__:16 | 🔑 DeepSeek Service initialized
+2025-12-01 09:37:33 | INFO     | services.deepseek_service | __init__:17 |    API Key: *********************************************************************2565 (length: 73)
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:83 |    ✅ LLM1 service ready!
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:85 |    → LLM2 (openai): Connecting to API...
+2025-12-01 09:37:33 | INFO     | services.openai_service | __init__:16 | 🔑 OpenAI Service initialized
+2025-12-01 09:37:33 | INFO     | services.openai_service | __init__:17 |    API Key: *********************************************************************2565 (length: 73)
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:89 |    ✅ LLM2 service ready!
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:90 | 
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:112 | ⚡ Auto-starting conversation...
+2025-12-01 09:37:33 | INFO     | dual_llm_app | start_conversation:113 |    → LLM1 will send the first message
+2025-12-01 09:37:33 | INFO     | dual_llm_app | handle_conversation_start:72 | 
+2025-12-01 09:37:33 | INFO     | dual_llm_app | handle_conversation_start:73 | ✅ CONVERSATION STARTED SUCCESSFULLY
+2025-12-01 09:37:33 | INFO     | dual_llm_app | handle_conversation_start:74 | 
+2025-12-01 09:37:34 | INFO     | dual_llm_app | send_message:129 | 
+2025-12-01 09:37:34 | INFO     | dual_llm_app | send_message:130 | ──────────────────────────────────────────────────────────────────────
+2025-12-01 09:37:34 | INFO     | dual_llm_app | send_message:131 | 💬 MESSAGE FROM LLM1
+2025-12-01 09:37:34 | INFO     | dual_llm_app | send_message:132 |    Length: 17 characters
+2025-12-01 09:37:34 | INFO     | dual_llm_app | send_message:133 |    Preview: Let's discuss: ai
+2025-12-01 09:37:34 | INFO     | dual_llm_app | send_message:134 | ──────────────────────────────────────────────────────────────────────
+2025-12-01 09:37:34 | INFO     | dual_llm_app | send_message:192 | 📤 Sending to LLM1 API:
+2025-12-01 09:37:34 | INFO     | dual_llm_app | send_message:193 |    Model: deepseek-chat
+2025-12-01 09:37:34 | INFO     | dual_llm_app | send_message:194 |    Messages in context: 2 (including 0 from history)
+2025-12-01 09:37:34 | INFO     | dual_llm_app | send_message:195 |    Temperature: 0.7
+2025-12-01 09:37:34 | INFO     | dual_llm_app | send_message:196 |    Max Tokens: 1000
+2025-12-01 09:37:34 | INFO     | dual_llm_app | send_message:197 |    ⏳ Waiting for LLM1 response...
+2025-12-01 09:37:34 | INFO     | services.deepseek_service | generate_response:41 | 🔧 Model name auto-corrected: 'deepseek-chat' → 'deepseek/deepseek-chat'
+2025-12-01 09:37:34 | INFO     | services.deepseek_service | generate_response:43 | ⚙️  Request Parameters:
+2025-12-01 09:37:34 | INFO     | services.deepseek_service | generate_response:44 |    Model: deepseek/deepseek-chat
+2025-12-01 09:37:34 | INFO     | services.deepseek_service | generate_response:45 |    Temperature: 0.7
+2025-12-01 09:37:34 | INFO     | services.deepseek_service | generate_response:46 |    Max Tokens: 1000
+2025-12-01 09:37:34 | INFO     | services.deepseek_service | generate_response:57 | Using OpenRouter API key: *********************************************************************2565 (length: 73)
+2025-12-01 09:37:34 | INFO     | services.deepseek_service | generate_response:99 | 📡 Calling DeepSeek API via OpenRouter...
+2025-12-01 09:37:34 | INFO     | services.deepseek_service | generate_response:100 |    Sending 2 messages
+2025-12-01 09:37:43 | INFO     | services.deepseek_service | generate_response:105 | ✅ API call completed in 9.71 seconds
+2025-12-01 09:37:44 | INFO     | services.deepseek_service | generate_response:117 | 📝 Response generated: 2568 characters
+2025-12-01 09:37:44 | INFO     | dual_llm_app | send_message:207 | ✅ Response received from LLM1:
+2025-12-01 09:37:44 | INFO     | dual_llm_app | send_message:208 |    Length: 2568 characters
+2025-12-01 09:37:44 | INFO     | dual_llm_app | send_message:209 |    Preview: Sure! Artificial Intelligence (AI) is a broad and fascinating field with significant implications for technology, society, and the future. Here are so...
+2025-12-01 09:37:44 | INFO     | dual_llm_app | send_message:215 |    📊 Token Usage: Prompt=15, Completion=501, Total=516
+2025-12-01 09:37:44 | INFO     | dual_llm_app | send_message:239 | 🔄 Turn switched: LLM2 is now active
+2025-12-01 09:37:44 | INFO     | dual_llm_app | send_message:248 | 📡 Sent update to frontend (message:sent event)
+2025-12-01 09:37:44 | INFO     | dual_llm_app | send_message:254 | ⚡ Auto-continuation enabled: LLM2 will respond automatically in 1 second...
+2025-12-01 09:37:45 | INFO     | dual_llm_app | continue_conversation:286 | 🔄 AUTO-CONTINUATION: LLM2 will now respond
+2025-12-01 09:37:45 | INFO     | dual_llm_app | send_message:129 | 
+2025-12-01 09:37:45 | INFO     | dual_llm_app | send_message:130 | ──────────────────────────────────────────────────────────────────────
+2025-12-01 09:37:45 | INFO     | dual_llm_app | send_message:131 | 💬 MESSAGE FROM LLM2
+2025-12-01 09:37:45 | INFO     | dual_llm_app | send_message:132 |    Length: 2568 characters
+2025-12-01 09:37:45 | INFO     | dual_llm_app | send_message:133 |    Preview: Sure! Artificial Intelligence (AI) is a broad and fascinating field with significant implications fo...
+2025-12-01 09:37:45 | INFO     | dual_llm_app | send_message:134 | ──────────────────────────────────────────────────────────────────────
+2025-12-01 09:37:45 | INFO     | dual_llm_app | send_message:192 | 📤 Sending to LLM2 API:
+2025-12-01 09:37:45 | INFO     | dual_llm_app | send_message:193 |    Model: gpt-3.5-turbo
+2025-12-01 09:37:45 | INFO     | dual_llm_app | send_message:194 |    Messages in context: 4 (including 2 from history)
+2025-12-01 09:37:45 | INFO     | dual_llm_app | send_message:195 |    Temperature: 0.7
+2025-12-01 09:37:45 | INFO     | dual_llm_app | send_message:196 |    Max Tokens: 1000
+2025-12-01 09:37:45 | INFO     | dual_llm_app | send_message:197 |    ⏳ Waiting for LLM2 response...
+2025-12-01 09:37:45 | INFO     | services.openai_service | generate_response:41 | 🔧 Model name auto-corrected: 'gpt-3.5-turbo' → 'openai/gpt-3.5-turbo'
+2025-12-01 09:37:45 | INFO     | services.openai_service | generate_response:43 | ⚙️  Request Parameters:
+2025-12-01 09:37:45 | INFO     | services.openai_service | generate_response:44 |    Model: openai/gpt-3.5-turbo
+2025-12-01 09:37:45 | INFO     | services.openai_service | generate_response:45 |    Temperature: 0.7
+2025-12-01 09:37:45 | INFO     | services.openai_service | generate_response:46 |    Max Tokens: 1000
+2025-12-01 09:37:45 | INFO     | services.openai_service | generate_response:57 | Using OpenRouter API key: *********************************************************************2565 (length: 73)
+2025-12-01 09:37:45 | INFO     | services.openai_service | generate_response:97 | 📡 Calling OpenAI API via OpenRouter...
+2025-12-01 09:37:45 | INFO     | services.openai_service | generate_response:98 |    Sending 4 messages
+2025-12-01 09:37:46 | INFO     | services.openai_service | generate_response:103 | ✅ API call completed in 1.11 seconds
+2025-12-01 09:37:46 | INFO     | services.openai_service | generate_response:115 | 📝 Response generated: 288 characters
+2025-12-01 09:37:46 | INFO     | dual_llm_app | send_message:207 | ✅ Response received from LLM2:
+2025-12-01 09:37:46 | INFO     | dual_llm_app | send_message:208 |    Length: 288 characters
+2025-12-01 09:37:46 | INFO     | dual_llm_app | send_message:209 |    Preview: Absolutely! Which specific aspect of AI are you most interested in discussing further or exploring in more detail? Feel free to choose a topic from th...
+2025-12-01 09:37:46 | INFO     | dual_llm_app | send_message:215 |    📊 Token Usage: Prompt=1057, Completion=55, Total=1112
+2025-12-01 09:37:46 | INFO     | dual_llm_app | send_message:239 | 🔄 Turn switched: LLM1 is now active
+2025-12-01 09:37:46 | INFO     | dual_llm_app | send_message:248 | 📡 Sent update to frontend (message:sent event)
+2025-12-01 09:37:46 | INFO     | dual_llm_app | send_message:254 | ⚡ Auto-continuation enabled: LLM1 will respond automatically in 1 second...
+2025-12-01 09:37:47 | INFO     | dual_llm_app | continue_conversation:286 | 🔄 AUTO-CONTINUATION: LLM1 will now respond
+2025-12-01 09:37:47 | INFO     | dual_llm_app | send_message:129 | 
+2025-12-01 09:37:47 | INFO     | dual_llm_app | send_message:130 | ──────────────────────────────────────────────────────────────────────
+2025-12-01 09:37:47 | INFO     | dual_llm_app | send_message:131 | 💬 MESSAGE FROM LLM1
+2025-12-01 09:37:47 | INFO     | dual_llm_app | send_message:132 |    Length: 288 characters
+2025-12-01 09:37:47 | INFO     | dual_llm_app | send_message:133 |    Preview: Absolutely! Which specific aspect of AI are you most interested in discussing further or exploring i...
+2025-12-01 09:37:47 | INFO     | dual_llm_app | send_message:134 | ──────────────────────────────────────────────────────────────────────
+2025-12-01 09:37:47 | INFO     | dual_llm_app | send_message:192 | 📤 Sending to LLM1 API:
+2025-12-01 09:37:47 | INFO     | dual_llm_app | send_message:193 |    Model: deepseek-chat
+2025-12-01 09:37:47 | INFO     | dual_llm_app | send_message:194 |    Messages in context: 6 (including 4 from history)
+2025-12-01 09:37:47 | INFO     | dual_llm_app | send_message:195 |    Temperature: 0.7
+2025-12-01 09:37:47 | INFO     | dual_llm_app | send_message:196 |    Max Tokens: 1000
+2025-12-01 09:37:47 | INFO     | dual_llm_app | send_message:197 |    ⏳ Waiting for LLM1 response...
+2025-12-01 09:37:47 | INFO     | services.deepseek_service | generate_response:41 | 🔧 Model name auto-corrected: 'deepseek-chat' → 'deepseek/deepseek-chat'
+2025-12-01 09:37:47 | INFO     | services.deepseek_service | generate_response:43 | ⚙️  Request Parameters:
+2025-12-01 09:37:47 | INFO     | services.deepseek_service | generate_response:44 |    Model: deepseek/deepseek-chat
+2025-12-01 09:37:47 | INFO     | services.deepseek_service | generate_response:45 |    Temperature: 0.7
+2025-12-01 09:37:47 | INFO     | services.deepseek_service | generate_response:46 |    Max Tokens: 1000
+2025-12-01 09:37:47 | INFO     | services.deepseek_service | generate_response:57 | Using OpenRouter API key: *********************************************************************2565 (length: 73)
+2025-12-01 09:37:47 | INFO     | services.deepseek_service | generate_response:99 | 📡 Calling DeepSeek API via OpenRouter...
+2025-12-01 09:37:47 | INFO     | services.deepseek_service | generate_response:100 |    Sending 6 messages
+2025-12-01 09:37:48 | INFO     | dual_llm_app | handle_conversation_pause:114 | 
+2025-12-01 09:37:48 | INFO     | dual_llm_app | handle_conversation_pause:115 | ⏸️  CONVERSATION PAUSE REQUESTED
+2025-12-01 09:37:48 | INFO     | dual_llm_app | pause:313 | 
+2025-12-01 09:37:48 | INFO     | dual_llm_app | pause:314 | ⏸️  CONVERSATION PAUSED
+2025-12-01 09:37:48 | INFO     | dual_llm_app | pause:315 |    Auto-continuation stopped - LLMs will not respond automatically
+2025-12-01 09:37:48 | INFO     | dual_llm_app | pause:316 | 
+2025-12-01 09:37:48 | INFO     | dual_llm_app | handle_conversation_pause:118 | 
+2025-12-01 09:37:50 | INFO     | dual_llm_app | handle_conversation_reset:105 | 
+2025-12-01 09:37:50 | INFO     | dual_llm_app | handle_conversation_reset:106 | 🔄 CONVERSATION RESET REQUESTED
+2025-12-01 09:37:50 | INFO     | dual_llm_app | handle_conversation_reset:109 | ✅ Conversation reset completed
+2025-12-01 09:37:50 | INFO     | dual_llm_app | handle_conversation_reset:110 | 
+2025-12-01 09:38:03 | INFO     | services.deepseek_service | generate_response:105 | ✅ API call completed in 16.79 seconds
+2025-12-01 09:38:03 | INFO     | services.deepseek_service | generate_response:117 | 📝 Response generated: 3721 characters
+2025-12-01 09:38:03 | INFO     | dual_llm_app | send_message:207 | ✅ Response received from LLM1:
+2025-12-01 09:38:03 | INFO     | dual_llm_app | send_message:208 |    Length: 3721 characters
+2025-12-01 09:38:03 | INFO     | dual_llm_app | send_message:209 |    Preview: Great! Here are some focused discussions or deeper dives we can take into specific aspects of AI, based on the topics outlined:
+
+---
+
+### **1. What is...
+2025-12-01 09:38:03 | INFO     | dual_llm_app | send_message:215 |    📊 Token Usage: Prompt=1126, Completion=739, Total=1865
+2025-12-01 09:38:03 | INFO     | dual_llm_app | send_message:239 | 🔄 Turn switched: LLM2 is now active
+2025-12-01 09:38:03 | INFO     | dual_llm_app | send_message:248 | 📡 Sent update to frontend (message:sent event)
+2025-12-01 09:38:03 | INFO     | dual_llm_app | send_message:254 | ⚡ Auto-continuation enabled: LLM2 will respond automatically in 1 second...
+2025-12-01 09:38:08 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:38:08 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:38:08 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:38:08 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:38:08 | INFO     | dual_llm_app | <module>:142 | Starting server on port 3000
+2025-12-01 09:38:08 | INFO     | dual_llm_app | <module>:143 | Environment: Production
+2025-12-01 09:38:09 | INFO     | dual_llm_app | handle_connect:40 | 
+2025-12-01 09:38:09 | INFO     | dual_llm_app | handle_connect:41 | 🌐 NEW CLIENT CONNECTED
+2025-12-01 09:38:09 | INFO     | dual_llm_app | handle_connect:42 |    Session ID: jiUU0Hk6936RTAqzAAAB
+2025-12-01 09:38:09 | INFO     | dual_llm_app | handle_connect:43 |    IP Address: 127.0.0.1
+2025-12-01 09:38:09 | INFO     | dual_llm_app | handle_connect:44 | 
+2025-12-01 09:38:18 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:38:18 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:38:18 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:38:18 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:38:18 | INFO     | dual_llm_app | <module>:142 | Starting server on port 3000
+2025-12-01 09:38:18 | INFO     | dual_llm_app | <module>:143 | Environment: Production
+2025-12-01 09:38:19 | INFO     | dual_llm_app | handle_connect:40 | 
+2025-12-01 09:38:19 | INFO     | dual_llm_app | handle_connect:41 | 🌐 NEW CLIENT CONNECTED
+2025-12-01 09:38:19 | INFO     | dual_llm_app | handle_connect:42 |    Session ID: yfcb504FprSqwkaVAAAB
+2025-12-01 09:38:19 | INFO     | dual_llm_app | handle_connect:43 |    IP Address: 127.0.0.1
+2025-12-01 09:38:19 | INFO     | dual_llm_app | handle_connect:44 | 
