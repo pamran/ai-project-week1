@@ -1,0 +1,1570 @@
+2025-12-01 08:50:41 | INFO     | dual_llm_app | <module>:1 | Logger test successful
+2025-12-01 08:50:52 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:50:52 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:50:52 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:50:52 | INFO     | dual_llm_app | __init__:20 | ConversationManager initialized
+2025-12-01 08:51:31 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:51:31 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:51:31 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:51:31 | INFO     | dual_llm_app | __init__:20 | ConversationManager initialized
+2025-12-01 08:51:31 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:51:31 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:51:31 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:51:31 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:51:31 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:51:31 | INFO     | dual_llm_app | __init__:20 | ConversationManager initialized
+2025-12-01 08:51:31 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:51:31 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:51:36 | INFO     | dual_llm_app | handle_connect:40 | Client connected: NhbEdEwoOqZIehajAAAB from 127.0.0.1
+2025-12-01 08:51:36 | INFO     | dual_llm_app | handle_conversation_reset:92 | Conversation reset requested
+2025-12-01 08:51:36 | INFO     | dual_llm_app | handle_conversation_reset:95 | Conversation reset completed
+2025-12-01 08:51:51 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:51:51 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:51:51 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:51:51 | INFO     | dual_llm_app | __init__:20 | ConversationManager initialized
+2025-12-01 08:51:51 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:51:51 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:51:51 | INFO     | dual_llm_app | handle_connect:40 | Client connected: mxnnwOYDdJGPaRaWAAAB from 127.0.0.1
+2025-12-01 08:52:03 | INFO     | dual_llm_app | handle_conversation_start:55 | Starting conversation - Topic: 'space', Starting LLM: llm1
+2025-12-01 08:52:03 | INFO     | dual_llm_app | start_conversation:23 | Starting conversation - Topic: 'space', Starting LLM: llm1
+2025-12-01 08:52:03 | INFO     | dual_llm_app | start_conversation:71 | Initializing LLM1 service - Provider: deepseek
+2025-12-01 08:52:03 | INFO     | services.deepseek_service | __init__:16 | DeepSeekService initialized with API key: *********************************************************************8096
+2025-12-01 08:52:03 | INFO     | dual_llm_app | start_conversation:75 | LLM1 service initialized successfully
+2025-12-01 08:52:03 | INFO     | dual_llm_app | start_conversation:77 | Initializing LLM2 service - Provider: openai
+2025-12-01 08:52:03 | INFO     | services.openai_service | __init__:16 | OpenAIService initialized with API key: ****************************************************************************************************************************************************************TK0A
+2025-12-01 08:52:03 | INFO     | dual_llm_app | start_conversation:81 | LLM2 service initialized successfully
+2025-12-01 08:52:03 | INFO     | dual_llm_app | handle_conversation_start:63 | Conversation started successfully - Topic: 'space'
+2025-12-01 08:52:16 | INFO     | dual_llm_app | handle_message_send:80 | Message received from llm1 - Length: 14 chars
+2025-12-01 08:52:16 | INFO     | dual_llm_app | send_message:110 | Processing message from llm1 - Length: 14 chars
+2025-12-01 08:52:16 | INFO     | dual_llm_app | send_message:171 | Calling llm1 API (Model: deepseek-chat)...
+2025-12-01 08:52:16 | INFO     | services.deepseek_service | generate_response:40 | Model name auto-corrected: 'deepseek-chat' -> 'deepseek/deepseek-chat'
+2025-12-01 08:52:16 | INFO     | services.deepseek_service | generate_response:76 | Invoking LLM with 2 messages
+2025-12-01 08:52:33 | INFO     | services.deepseek_service | generate_response:78 | LLM response received successfully
+2025-12-01 08:52:33 | INFO     | services.deepseek_service | generate_response:90 | Response generated - Length: 2005 chars
+2025-12-01 08:52:33 | INFO     | dual_llm_app | send_message:178 | Received response from llm1 - Length: 2005 chars
+2025-12-01 08:52:33 | INFO     | dual_llm_app | send_message:204 | Turn switched to llm2
+2025-12-01 08:52:33 | INFO     | dual_llm_app | handle_message_send:85 | Message processed successfully for llm1
+2025-12-01 08:53:40 | INFO     | dual_llm_app | handle_message_send:80 | Message received from llm2 - Length: 14 chars
+2025-12-01 08:53:40 | INFO     | dual_llm_app | send_message:110 | Processing message from llm2 - Length: 14 chars
+2025-12-01 08:53:40 | INFO     | dual_llm_app | send_message:171 | Calling llm2 API (Model: gpt-3.5-turbo)...
+2025-12-01 08:53:40 | INFO     | services.openai_service | generate_response:40 | Model name auto-corrected: 'gpt-3.5-turbo' -> 'openai/gpt-3.5-turbo'
+2025-12-01 08:53:40 | INFO     | services.openai_service | generate_response:75 | Invoking LLM with 4 messages
+2025-12-01 08:53:40 | ERROR    | services.openai_service | generate_response:98 | OpenAI API error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 76, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:53:40 | ERROR    | services.openai_service | generate_response:102 | Authentication error detected - Check API key
+2025-12-01 08:53:40 | ERROR    | dual_llm_app | send_message:215 | Error processing message from llm2: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 76, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 172, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 103, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:53:40 | ERROR    | dual_llm_app | handle_message_send:87 | Failed to send message from llm2: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 76, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/app.py", line 83, in handle_message_send
+    conversation_manager.send_message(llm_id, message)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 172, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 103, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:54:07 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:54:07 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:54:07 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:54:07 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 08:54:07 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:54:07 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:54:08 | INFO     | dual_llm_app | handle_connect:40 | Client connected: iiMuqk5QNw9pfjQhAAAB from 127.0.0.1
+2025-12-01 08:54:10 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:54:10 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:54:10 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:54:10 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 08:54:10 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:54:10 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:54:12 | INFO     | dual_llm_app | handle_connect:40 | Client connected: v0T8OrpSCHeBtJDaAAAB from 127.0.0.1
+2025-12-01 08:54:21 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:54:21 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:54:21 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:54:21 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 08:54:21 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:54:21 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:54:22 | INFO     | dual_llm_app | handle_connect:40 | Client connected: N-M1XY9mfppphGvOAAAB from 127.0.0.1
+2025-12-01 08:54:25 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:54:25 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:54:25 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:54:25 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 08:54:25 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:54:25 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:54:25 | INFO     | dual_llm_app | handle_connect:40 | Client connected: DRq1ulWQLQs9emcKAAAB from 127.0.0.1
+2025-12-01 08:54:40 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:54:40 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:54:40 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:54:40 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 08:54:40 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:54:40 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:54:41 | INFO     | dual_llm_app | handle_connect:40 | Client connected: THWfl3nCSHJVAUfXAAAB from 127.0.0.1
+2025-12-01 08:55:02 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:55:02 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:55:02 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:55:02 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 08:55:02 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:55:02 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:55:03 | INFO     | dual_llm_app | handle_connect:40 | Client connected: vKMwXRBUw-5sXa_EAAAB from 127.0.0.1
+2025-12-01 08:55:08 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:55:08 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:55:08 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:55:08 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 08:55:08 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:55:08 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:55:18 | INFO     | dual_llm_app | handle_disconnect:45 | Client disconnected: vKMwXRBUw-5sXa_EAAAB
+2025-12-01 08:55:18 | INFO     | dual_llm_app | handle_connect:40 | Client connected: lKyUMLlcPIjUfo_2AAAD from 127.0.0.1
+2025-12-01 08:55:21 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:55:21 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:55:21 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:55:21 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 08:55:21 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:55:21 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:55:22 | INFO     | dual_llm_app | handle_connect:40 | Client connected: j7YJ1_O9kXtza0A4AAAB from 127.0.0.1
+2025-12-01 08:55:56 | INFO     | dual_llm_app | handle_conversation_start:55 | Starting conversation - Topic: 'Space', Starting LLM: llm1
+2025-12-01 08:55:56 | INFO     | dual_llm_app | start_conversation:24 | Starting conversation - Topic: 'Space', Starting LLM: llm1
+2025-12-01 08:55:56 | INFO     | dual_llm_app | start_conversation:72 | Initializing LLM1 service - Provider: deepseek
+2025-12-01 08:55:56 | INFO     | services.deepseek_service | __init__:16 | DeepSeekService initialized with API key: *********************************************************************8096
+2025-12-01 08:55:56 | INFO     | dual_llm_app | start_conversation:76 | LLM1 service initialized successfully
+2025-12-01 08:55:56 | INFO     | dual_llm_app | start_conversation:78 | Initializing LLM2 service - Provider: openai
+2025-12-01 08:55:56 | INFO     | services.openai_service | __init__:16 | OpenAIService initialized with API key: ****************************************************************************************************************************************************************TK0A
+2025-12-01 08:55:56 | INFO     | dual_llm_app | start_conversation:82 | LLM2 service initialized successfully
+2025-12-01 08:55:56 | INFO     | dual_llm_app | start_conversation:104 | Auto-starting conversation with llm1
+2025-12-01 08:55:56 | INFO     | dual_llm_app | handle_conversation_start:63 | Conversation started successfully - Topic: 'Space'
+2025-12-01 08:55:57 | INFO     | dual_llm_app | send_message:120 | Processing message from llm1 - Length: 20 chars
+2025-12-01 08:55:57 | INFO     | dual_llm_app | send_message:181 | Calling llm1 API (Model: deepseek-chat)...
+2025-12-01 08:55:57 | INFO     | services.deepseek_service | generate_response:40 | Model name auto-corrected: 'deepseek-chat' -> 'deepseek/deepseek-chat'
+2025-12-01 08:55:57 | INFO     | services.deepseek_service | generate_response:76 | Invoking LLM with 2 messages
+2025-12-01 08:56:16 | INFO     | services.deepseek_service | generate_response:78 | LLM response received successfully
+2025-12-01 08:56:16 | INFO     | services.deepseek_service | generate_response:90 | Response generated - Length: 3808 chars
+2025-12-01 08:56:16 | INFO     | dual_llm_app | send_message:188 | Received response from llm1 - Length: 3808 chars
+2025-12-01 08:56:16 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm2
+2025-12-01 08:56:16 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm2 will respond to previous message
+2025-12-01 08:56:17 | INFO     | dual_llm_app | continue_conversation:256 | Auto-continuing conversation: llm2 responding to message
+2025-12-01 08:56:17 | INFO     | dual_llm_app | send_message:120 | Processing message from llm2 - Length: 3808 chars
+2025-12-01 08:56:17 | INFO     | dual_llm_app | send_message:181 | Calling llm2 API (Model: gpt-3.5-turbo)...
+2025-12-01 08:56:17 | INFO     | services.openai_service | generate_response:40 | Model name auto-corrected: 'gpt-3.5-turbo' -> 'openai/gpt-3.5-turbo'
+2025-12-01 08:56:17 | INFO     | services.openai_service | generate_response:75 | Invoking LLM with 4 messages
+2025-12-01 08:56:17 | ERROR    | services.openai_service | generate_response:98 | OpenAI API error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 76, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:56:17 | ERROR    | services.openai_service | generate_response:102 | Authentication error detected - Check API key
+2025-12-01 08:56:17 | ERROR    | dual_llm_app | send_message:235 | Error processing message from llm2: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 76, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 103, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:56:17 | ERROR    | dual_llm_app | continue_conversation:260 | Error in auto-continue: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 76, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 258, in continue_conversation
+    self.send_message(self.current_turn, message)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 103, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:57:20 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:57:20 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:57:20 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:57:20 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 08:57:20 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:57:20 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:57:20 | INFO     | dual_llm_app | handle_connect:40 | Client connected: XH6espqLctDAUWtxAAAB from 127.0.0.1
+2025-12-01 08:57:23 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:57:23 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:57:23 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:57:23 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 08:57:23 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:57:23 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:57:24 | INFO     | dual_llm_app | handle_connect:40 | Client connected: l7KvOS2UuUHwiduzAAAB from 127.0.0.1
+2025-12-01 08:57:31 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:57:31 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:57:31 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:57:31 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 08:57:31 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:57:31 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:58:00 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:58:00 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:58:00 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:58:00 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 08:58:00 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:58:00 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:58:01 | INFO     | dual_llm_app | handle_connect:40 | Client connected: v9ZDiNxs8BmUtVIGAAAB from 127.0.0.1
+2025-12-01 08:58:13 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 08:58:13 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 08:58:13 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 08:58:13 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 08:58:13 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 08:58:13 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 08:58:14 | INFO     | dual_llm_app | handle_connect:40 | Client connected: qzi4t-h-4ZIcf1J2AAAB from 127.0.0.1
+2025-12-01 08:58:27 | INFO     | dual_llm_app | handle_conversation_start:55 | Starting conversation - Topic: 'Planets', Starting LLM: llm1
+2025-12-01 08:58:27 | INFO     | dual_llm_app | start_conversation:24 | Starting conversation - Topic: 'Planets', Starting LLM: llm1
+2025-12-01 08:58:27 | INFO     | dual_llm_app | start_conversation:72 | Initializing LLM1 service - Provider: deepseek
+2025-12-01 08:58:27 | INFO     | services.deepseek_service | __init__:16 | DeepSeekService initialized with API key: *********************************************************************8096
+2025-12-01 08:58:27 | INFO     | dual_llm_app | start_conversation:76 | LLM1 service initialized successfully
+2025-12-01 08:58:27 | INFO     | dual_llm_app | start_conversation:78 | Initializing LLM2 service - Provider: openai
+2025-12-01 08:58:27 | INFO     | services.openai_service | __init__:16 | OpenAIService initialized with API key: ****************************************************************************************************************************************************************TK0A
+2025-12-01 08:58:27 | INFO     | dual_llm_app | start_conversation:82 | LLM2 service initialized successfully
+2025-12-01 08:58:27 | INFO     | dual_llm_app | start_conversation:104 | Auto-starting conversation with llm1
+2025-12-01 08:58:27 | INFO     | dual_llm_app | handle_conversation_start:63 | Conversation started successfully - Topic: 'Planets'
+2025-12-01 08:58:28 | INFO     | dual_llm_app | send_message:120 | Processing message from llm1 - Length: 22 chars
+2025-12-01 08:58:28 | INFO     | dual_llm_app | send_message:181 | Calling llm1 API (Model: deepseek-chat)...
+2025-12-01 08:58:28 | INFO     | services.deepseek_service | generate_response:40 | Model name auto-corrected: 'deepseek-chat' -> 'deepseek/deepseek-chat'
+2025-12-01 08:58:28 | INFO     | services.deepseek_service | generate_response:78 | Invoking LLM with 2 messages
+2025-12-01 08:58:46 | INFO     | services.deepseek_service | generate_response:80 | LLM response received successfully
+2025-12-01 08:58:46 | INFO     | services.deepseek_service | generate_response:92 | Response generated - Length: 3428 chars
+2025-12-01 08:58:46 | INFO     | dual_llm_app | send_message:188 | Received response from llm1 - Length: 3428 chars
+2025-12-01 08:58:46 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm2
+2025-12-01 08:58:46 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm2 will respond to previous message
+2025-12-01 08:58:47 | INFO     | dual_llm_app | continue_conversation:256 | Auto-continuing conversation: llm2 responding to message
+2025-12-01 08:58:47 | INFO     | dual_llm_app | send_message:120 | Processing message from llm2 - Length: 3428 chars
+2025-12-01 08:58:47 | INFO     | dual_llm_app | send_message:181 | Calling llm2 API (Model: gpt-3.5-turbo)...
+2025-12-01 08:58:47 | INFO     | services.openai_service | generate_response:40 | Model name auto-corrected: 'gpt-3.5-turbo' -> 'openai/gpt-3.5-turbo'
+2025-12-01 08:58:47 | INFO     | services.openai_service | generate_response:77 | Invoking LLM with 4 messages
+2025-12-01 08:58:48 | ERROR    | services.openai_service | generate_response:100 | OpenAI API error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 78, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:58:48 | ERROR    | services.openai_service | generate_response:104 | Authentication error detected - Check API key
+2025-12-01 08:58:48 | ERROR    | dual_llm_app | send_message:235 | Error processing message from llm2: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 78, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 105, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:58:48 | ERROR    | dual_llm_app | continue_conversation:260 | Error in auto-continue: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 78, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 258, in continue_conversation
+    self.send_message(self.current_turn, message)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 105, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 09:00:12 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:00:12 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:00:12 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:00:12 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:00:12 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:00:12 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:00:13 | INFO     | dual_llm_app | handle_connect:40 | Client connected: UceXwc9VsC64QI22AAAB from 127.0.0.1
+2025-12-01 09:00:19 | INFO     | services.openai_service | __init__:16 | OpenAIService initialized with API key: ***************7890
+2025-12-01 09:00:48 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:00:48 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:00:48 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:00:48 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:00:48 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:00:48 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:00:49 | INFO     | dual_llm_app | handle_connect:40 | Client connected: hWYAzjxMOamSjzGnAAAB from 127.0.0.1
+2025-12-01 09:00:55 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:00:55 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:00:55 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:00:55 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:00:55 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:00:55 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:01:21 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:01:21 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:01:21 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:01:21 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:01:21 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:01:21 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:01:22 | INFO     | dual_llm_app | handle_connect:40 | Client connected: DHnNgiUqgsUXk0FiAAAB from 127.0.0.1
+2025-12-01 09:01:39 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:01:39 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:01:39 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:01:39 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:01:39 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:01:39 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:01:40 | INFO     | dual_llm_app | handle_connect:40 | Client connected: y4KEJchDPP7e6ZAdAAAB from 127.0.0.1
+2025-12-01 09:01:51 | INFO     | dual_llm_app | handle_conversation_start:55 | Starting conversation - Topic: 'eggs', Starting LLM: llm1
+2025-12-01 09:01:51 | INFO     | dual_llm_app | start_conversation:24 | Starting conversation - Topic: 'eggs', Starting LLM: llm1
+2025-12-01 09:01:51 | INFO     | dual_llm_app | start_conversation:72 | Initializing LLM1 service - Provider: deepseek
+2025-12-01 09:01:51 | INFO     | services.deepseek_service | __init__:16 | DeepSeekService initialized with API key: *********************************************************************8096
+2025-12-01 09:01:51 | INFO     | dual_llm_app | start_conversation:76 | LLM1 service initialized successfully
+2025-12-01 09:01:51 | INFO     | dual_llm_app | start_conversation:78 | Initializing LLM2 service - Provider: openai
+2025-12-01 09:01:51 | INFO     | services.openai_service | __init__:16 | OpenAIService initialized with API key: ****************************************************************************************************************************************************************TK0A
+2025-12-01 09:01:51 | INFO     | dual_llm_app | start_conversation:82 | LLM2 service initialized successfully
+2025-12-01 09:01:51 | INFO     | dual_llm_app | start_conversation:104 | Auto-starting conversation with llm1
+2025-12-01 09:01:51 | INFO     | dual_llm_app | handle_conversation_start:63 | Conversation started successfully - Topic: 'eggs'
+2025-12-01 09:01:52 | INFO     | dual_llm_app | send_message:120 | Processing message from llm1 - Length: 19 chars
+2025-12-01 09:01:52 | INFO     | dual_llm_app | send_message:181 | Calling llm1 API (Model: deepseek-chat)...
+2025-12-01 09:01:52 | INFO     | services.deepseek_service | generate_response:40 | Model name auto-corrected: 'deepseek-chat' -> 'deepseek/deepseek-chat'
+2025-12-01 09:01:52 | INFO     | services.deepseek_service | generate_response:88 | Invoking LLM with 2 messages
+2025-12-01 09:02:08 | INFO     | services.deepseek_service | generate_response:90 | LLM response received successfully
+2025-12-01 09:02:08 | INFO     | services.deepseek_service | generate_response:102 | Response generated - Length: 2526 chars
+2025-12-01 09:02:08 | INFO     | dual_llm_app | send_message:188 | Received response from llm1 - Length: 2526 chars
+2025-12-01 09:02:08 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm2
+2025-12-01 09:02:08 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm2 will respond to previous message
+2025-12-01 09:02:09 | INFO     | dual_llm_app | continue_conversation:256 | Auto-continuing conversation: llm2 responding to message
+2025-12-01 09:02:09 | INFO     | dual_llm_app | send_message:120 | Processing message from llm2 - Length: 2526 chars
+2025-12-01 09:02:09 | INFO     | dual_llm_app | send_message:181 | Calling llm2 API (Model: gpt-3.5-turbo)...
+2025-12-01 09:02:09 | INFO     | services.openai_service | generate_response:40 | Model name auto-corrected: 'gpt-3.5-turbo' -> 'openai/gpt-3.5-turbo'
+2025-12-01 09:02:09 | INFO     | services.openai_service | generate_response:83 | Invoking LLM with 4 messages
+2025-12-01 09:02:09 | ERROR    | services.openai_service | generate_response:106 | OpenAI API error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 84, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 09:02:09 | ERROR    | services.openai_service | generate_response:110 | Authentication error detected - Check API key
+2025-12-01 09:02:09 | ERROR    | dual_llm_app | send_message:235 | Error processing message from llm2: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 84, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 111, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 09:02:09 | ERROR    | dual_llm_app | continue_conversation:260 | Error in auto-continue: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 84, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 258, in continue_conversation
+    self.send_message(self.current_turn, message)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 111, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 09:03:09 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:03:09 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:03:09 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:03:09 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:03:09 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:03:09 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:03:10 | INFO     | dual_llm_app | handle_connect:40 | Client connected: FuPaFopbk8MywbqGAAAB from 127.0.0.1
+2025-12-01 09:03:20 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:03:20 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:03:20 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:03:20 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:03:20 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:03:20 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:03:21 | INFO     | dual_llm_app | handle_connect:40 | Client connected: 0P3lAphR1LxQAEJ4AAAB from 127.0.0.1
+2025-12-01 09:04:45 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:04:45 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:04:45 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:04:45 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:04:45 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:04:45 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:05:03 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:05:03 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:05:03 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:05:03 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:05:03 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:05:03 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:05:04 | INFO     | dual_llm_app | handle_connect:40 | Client connected: 0GKhcQPefpzXyg4kAAAB from 127.0.0.1
+2025-12-01 09:08:16 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:08:16 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:08:16 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:08:16 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:08:16 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:08:16 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:08:17 | INFO     | dual_llm_app | handle_connect:40 | Client connected: XGfAYqVZpSlnYz-bAAAB from 127.0.0.1
+2025-12-01 09:11:26 | INFO     | dual_llm_app | handle_conversation_start:55 | Starting conversation - Topic: 'space', Starting LLM: llm2
+2025-12-01 09:11:26 | INFO     | dual_llm_app | start_conversation:24 | Starting conversation - Topic: 'space', Starting LLM: llm2
+2025-12-01 09:11:26 | INFO     | dual_llm_app | start_conversation:72 | Initializing LLM1 service - Provider: deepseek
+2025-12-01 09:11:26 | INFO     | services.deepseek_service | __init__:16 | DeepSeekService initialized with API key: *********************************************************************8096
+2025-12-01 09:11:26 | INFO     | dual_llm_app | start_conversation:76 | LLM1 service initialized successfully
+2025-12-01 09:11:26 | INFO     | dual_llm_app | start_conversation:78 | Initializing LLM2 service - Provider: openai
+2025-12-01 09:11:26 | INFO     | services.openai_service | __init__:16 | OpenAIService initialized with API key: ****************************************************************************************************************************************************************TK0A
+2025-12-01 09:11:26 | INFO     | dual_llm_app | start_conversation:82 | LLM2 service initialized successfully
+2025-12-01 09:11:26 | INFO     | dual_llm_app | start_conversation:104 | Auto-starting conversation with llm2
+2025-12-01 09:11:26 | INFO     | dual_llm_app | handle_conversation_start:63 | Conversation started successfully - Topic: 'space'
+2025-12-01 09:11:26 | INFO     | dual_llm_app | send_message:120 | Processing message from llm2 - Length: 20 chars
+2025-12-01 09:11:26 | INFO     | dual_llm_app | send_message:181 | Calling llm2 API (Model: gpt-3.5-turbo)...
+2025-12-01 09:11:26 | INFO     | services.openai_service | generate_response:40 | Model name auto-corrected: 'gpt-3.5-turbo' -> 'openai/gpt-3.5-turbo'
+2025-12-01 09:11:26 | INFO     | services.openai_service | generate_response:53 | Using OpenRouter API key: ****************************************************************************************************************************************************************TK0A (length: 164)
+2025-12-01 09:11:27 | INFO     | services.openai_service | generate_response:93 | Invoking LLM with 2 messages
+2025-12-01 09:11:27 | ERROR    | services.openai_service | generate_response:116 | OpenAI API error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 94, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 09:11:27 | ERROR    | services.openai_service | generate_response:120 | Authentication error detected - Check API key
+2025-12-01 09:11:27 | ERROR    | dual_llm_app | send_message:235 | Error processing message from llm2: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 94, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 121, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 09:15:08 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:15:08 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:15:08 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:15:08 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:15:08 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:15:08 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:15:08 | INFO     | dual_llm_app | handle_connect:40 | Client connected: f74WNMzUfMobyOBQAAAB from 127.0.0.1
+2025-12-01 09:15:16 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:15:16 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:15:16 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:15:16 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:15:16 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:15:16 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:15:17 | INFO     | dual_llm_app | handle_connect:40 | Client connected: XN6yZ1uhSI7jj8sHAAAB from 127.0.0.1
+2025-12-01 09:15:30 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:15:30 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:15:30 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:15:30 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:15:30 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:15:30 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:15:30 | INFO     | dual_llm_app | handle_connect:40 | Client connected: HjD4nqSCawn6u1l_AAAB from 127.0.0.1
+2025-12-01 09:15:36 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:15:36 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:15:36 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:15:36 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:15:36 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:15:36 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:15:36 | INFO     | dual_llm_app | handle_connect:40 | Client connected: qox0-NWsPJrvvV8OAAAB from 127.0.0.1
+2025-12-01 09:15:59 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:15:59 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:15:59 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:15:59 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:15:59 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:15:59 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:16:18 | INFO     | dual_llm_app | handle_conversation_start:55 | Starting conversation - Topic: 'eggs', Starting LLM: llm2
+2025-12-01 09:16:18 | INFO     | dual_llm_app | start_conversation:24 | Starting conversation - Topic: 'eggs', Starting LLM: llm2
+2025-12-01 09:16:18 | INFO     | dual_llm_app | start_conversation:72 | Initializing LLM1 service - Provider: deepseek
+2025-12-01 09:16:18 | INFO     | services.deepseek_service | __init__:16 | DeepSeekService initialized with API key: *********************************************************************8096
+2025-12-01 09:16:18 | INFO     | dual_llm_app | start_conversation:76 | LLM1 service initialized successfully
+2025-12-01 09:16:18 | INFO     | dual_llm_app | start_conversation:78 | Initializing LLM2 service - Provider: openai
+2025-12-01 09:16:18 | INFO     | services.openai_service | __init__:16 | OpenAIService initialized with OpenAI API key: ****************************************************************************************************************************************************************TK0A
+2025-12-01 09:16:18 | INFO     | dual_llm_app | start_conversation:82 | LLM2 service initialized successfully
+2025-12-01 09:16:18 | INFO     | dual_llm_app | start_conversation:104 | Auto-starting conversation with llm2
+2025-12-01 09:16:18 | INFO     | dual_llm_app | handle_conversation_start:63 | Conversation started successfully - Topic: 'eggs'
+2025-12-01 09:16:18 | INFO     | dual_llm_app | send_message:120 | Processing message from llm2 - Length: 19 chars
+2025-12-01 09:16:18 | INFO     | dual_llm_app | send_message:181 | Calling llm2 API (Model: gpt-3.5-turbo)...
+2025-12-01 09:16:18 | INFO     | services.openai_service | generate_response:49 | Using OpenAI API key: ****************************************************************************************************************************************************************TK0A (length: 164)
+2025-12-01 09:16:18 | INFO     | services.openai_service | generate_response:85 | Invoking LLM with 2 messages
+2025-12-01 09:16:21 | ERROR    | services.openai_service | generate_response:108 | OpenAI API error: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 86, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-12-01 09:16:21 | ERROR    | services.openai_service | generate_response:115 | Rate limit/quota error detected
+2025-12-01 09:16:21 | ERROR    | dual_llm_app | send_message:235 | Error processing message from llm2: OpenAI API rate limit/quota exceeded: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 86, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 116, in generate_response
+    raise Exception(f'OpenAI API rate limit/quota exceeded: {error_msg}')
+Exception: OpenAI API rate limit/quota exceeded: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-12-01 09:16:28 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:16:28 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:16:28 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:16:29 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:16:29 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:16:29 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:16:29 | INFO     | dual_llm_app | handle_connect:40 | Client connected: BkL1m0L_bvEBIUDwAAAB from 127.0.0.1
+2025-12-01 09:18:01 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:18:01 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:18:01 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:18:01 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:18:01 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:18:01 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:18:01 | INFO     | dual_llm_app | handle_connect:40 | Client connected: u4cECjwK9FemR8yKAAAB from 127.0.0.1
+2025-12-01 09:18:05 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:18:05 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:18:05 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:18:05 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:18:05 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:18:05 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:18:06 | INFO     | dual_llm_app | handle_connect:40 | Client connected: OCmx2QFv2RFB8qYqAAAB from 127.0.0.1
+2025-12-01 09:18:19 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:18:19 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:18:19 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:18:19 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:18:19 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:18:19 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:18:19 | INFO     | dual_llm_app | handle_connect:40 | Client connected: pXzcn1y8Ap_oGL7NAAAB from 127.0.0.1
+2025-12-01 09:18:25 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:18:25 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:18:25 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:18:25 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:18:25 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:18:25 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:18:25 | INFO     | dual_llm_app | handle_connect:40 | Client connected: xA_ot-qf3vrWvc2sAAAB from 127.0.0.1
+2025-12-01 09:18:47 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:18:47 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:18:47 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:18:47 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:18:47 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:18:47 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:19:01 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:19:01 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:19:01 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:19:01 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:19:01 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:19:01 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:19:02 | INFO     | dual_llm_app | handle_connect:40 | Client connected: gizJxYI0Q3aXklK7AAAB from 127.0.0.1
+2025-12-01 09:19:04 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:19:04 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:19:04 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:19:04 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:19:04 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:19:04 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:19:05 | INFO     | dual_llm_app | handle_connect:40 | Client connected: Un-4U5UN_lHzwyv3AAAB from 127.0.0.1
+2025-12-01 09:19:24 | INFO     | dual_llm_app | handle_conversation_start:55 | Starting conversation - Topic: 'eggs', Starting LLM: llm2
+2025-12-01 09:19:24 | INFO     | dual_llm_app | start_conversation:24 | Starting conversation - Topic: 'eggs', Starting LLM: llm2
+2025-12-01 09:19:24 | INFO     | dual_llm_app | start_conversation:72 | Initializing LLM1 service - Provider: deepseek
+2025-12-01 09:19:24 | INFO     | services.deepseek_service | __init__:16 | DeepSeekService initialized with API key: *********************************************************************8096
+2025-12-01 09:19:24 | INFO     | dual_llm_app | start_conversation:76 | LLM1 service initialized successfully
+2025-12-01 09:19:24 | INFO     | dual_llm_app | start_conversation:78 | Initializing LLM2 service - Provider: openai
+2025-12-01 09:19:24 | INFO     | services.openai_service | __init__:16 | OpenAIService initialized with OpenRouter API key: *********************************************************************67d5
+2025-12-01 09:19:24 | INFO     | dual_llm_app | start_conversation:82 | LLM2 service initialized successfully
+2025-12-01 09:19:24 | INFO     | dual_llm_app | start_conversation:104 | Auto-starting conversation with llm2
+2025-12-01 09:19:24 | INFO     | dual_llm_app | handle_conversation_start:63 | Conversation started successfully - Topic: 'eggs'
+2025-12-01 09:19:25 | INFO     | dual_llm_app | send_message:120 | Processing message from llm2 - Length: 19 chars
+2025-12-01 09:19:25 | INFO     | dual_llm_app | send_message:181 | Calling llm2 API (Model: gpt-3.5-turbo)...
+2025-12-01 09:19:25 | INFO     | services.openai_service | generate_response:40 | Model name auto-corrected: 'gpt-3.5-turbo' -> 'openai/gpt-3.5-turbo'
+2025-12-01 09:19:25 | INFO     | services.openai_service | generate_response:53 | Using OpenRouter API key: *********************************************************************67d5 (length: 73)
+2025-12-01 09:19:25 | INFO     | services.openai_service | generate_response:93 | Invoking LLM with 2 messages
+2025-12-01 09:19:27 | INFO     | services.openai_service | generate_response:95 | LLM response received successfully
+2025-12-01 09:19:27 | INFO     | services.openai_service | generate_response:107 | Response generated - Length: 328 chars
+2025-12-01 09:19:27 | INFO     | dual_llm_app | send_message:188 | Received response from llm2 - Length: 328 chars
+2025-12-01 09:19:27 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm1
+2025-12-01 09:19:27 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm1 will respond to previous message
+2025-12-01 09:19:28 | INFO     | dual_llm_app | continue_conversation:256 | Auto-continuing conversation: llm1 responding to message
+2025-12-01 09:19:28 | INFO     | dual_llm_app | send_message:120 | Processing message from llm1 - Length: 328 chars
+2025-12-01 09:19:28 | INFO     | dual_llm_app | send_message:181 | Calling llm1 API (Model: deepseek-chat)...
+2025-12-01 09:19:28 | INFO     | services.deepseek_service | generate_response:40 | Model name auto-corrected: 'deepseek-chat' -> 'deepseek/deepseek-chat'
+2025-12-01 09:19:28 | INFO     | services.deepseek_service | generate_response:53 | Using OpenRouter API key: *********************************************************************8096 (length: 73)
+2025-12-01 09:19:28 | INFO     | services.deepseek_service | generate_response:95 | Invoking LLM with 4 messages
+2025-12-01 09:19:39 | INFO     | services.deepseek_service | generate_response:97 | LLM response received successfully
+2025-12-01 09:19:39 | INFO     | services.deepseek_service | generate_response:109 | Response generated - Length: 2331 chars
+2025-12-01 09:19:39 | INFO     | dual_llm_app | send_message:188 | Received response from llm1 - Length: 2331 chars
+2025-12-01 09:19:39 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm2
+2025-12-01 09:19:39 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm2 will respond to previous message
+2025-12-01 09:19:40 | INFO     | dual_llm_app | continue_conversation:256 | Auto-continuing conversation: llm2 responding to message
+2025-12-01 09:19:40 | INFO     | dual_llm_app | send_message:120 | Processing message from llm2 - Length: 2331 chars
+2025-12-01 09:19:40 | INFO     | dual_llm_app | send_message:181 | Calling llm2 API (Model: gpt-3.5-turbo)...
+2025-12-01 09:19:40 | INFO     | services.openai_service | generate_response:40 | Model name auto-corrected: 'gpt-3.5-turbo' -> 'openai/gpt-3.5-turbo'
+2025-12-01 09:19:40 | INFO     | services.openai_service | generate_response:53 | Using OpenRouter API key: *********************************************************************67d5 (length: 73)
+2025-12-01 09:19:40 | INFO     | services.openai_service | generate_response:93 | Invoking LLM with 6 messages
+2025-12-01 09:19:41 | INFO     | services.openai_service | generate_response:95 | LLM response received successfully
+2025-12-01 09:19:41 | INFO     | services.openai_service | generate_response:107 | Response generated - Length: 276 chars
+2025-12-01 09:19:41 | INFO     | dual_llm_app | send_message:188 | Received response from llm2 - Length: 276 chars
+2025-12-01 09:19:41 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm1
+2025-12-01 09:19:41 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm1 will respond to previous message
+2025-12-01 09:19:42 | INFO     | dual_llm_app | continue_conversation:256 | Auto-continuing conversation: llm1 responding to message
+2025-12-01 09:19:42 | INFO     | dual_llm_app | send_message:120 | Processing message from llm1 - Length: 276 chars
+2025-12-01 09:19:42 | INFO     | dual_llm_app | send_message:181 | Calling llm1 API (Model: deepseek-chat)...
+2025-12-01 09:19:42 | INFO     | services.deepseek_service | generate_response:40 | Model name auto-corrected: 'deepseek-chat' -> 'deepseek/deepseek-chat'
+2025-12-01 09:19:42 | INFO     | services.deepseek_service | generate_response:53 | Using OpenRouter API key: *********************************************************************8096 (length: 73)
+2025-12-01 09:19:42 | INFO     | services.deepseek_service | generate_response:95 | Invoking LLM with 8 messages
+2025-12-01 09:19:49 | INFO     | services.deepseek_service | generate_response:97 | LLM response received successfully
+2025-12-01 09:19:49 | INFO     | services.deepseek_service | generate_response:109 | Response generated - Length: 2320 chars
+2025-12-01 09:19:49 | INFO     | dual_llm_app | send_message:188 | Received response from llm1 - Length: 2320 chars
+2025-12-01 09:19:49 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm2
+2025-12-01 09:19:49 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm2 will respond to previous message
+2025-12-01 09:19:50 | INFO     | dual_llm_app | continue_conversation:256 | Auto-continuing conversation: llm2 responding to message
+2025-12-01 09:19:50 | INFO     | dual_llm_app | send_message:120 | Processing message from llm2 - Length: 2320 chars
+2025-12-01 09:19:50 | INFO     | dual_llm_app | send_message:181 | Calling llm2 API (Model: gpt-3.5-turbo)...
+2025-12-01 09:19:50 | INFO     | services.openai_service | generate_response:40 | Model name auto-corrected: 'gpt-3.5-turbo' -> 'openai/gpt-3.5-turbo'
+2025-12-01 09:19:50 | INFO     | services.openai_service | generate_response:53 | Using OpenRouter API key: *********************************************************************67d5 (length: 73)
+2025-12-01 09:19:50 | INFO     | services.openai_service | generate_response:93 | Invoking LLM with 10 messages
+2025-12-01 09:19:51 | INFO     | services.openai_service | generate_response:95 | LLM response received successfully
+2025-12-01 09:19:51 | INFO     | services.openai_service | generate_response:107 | Response generated - Length: 251 chars
+2025-12-01 09:19:51 | INFO     | dual_llm_app | send_message:188 | Received response from llm2 - Length: 251 chars
+2025-12-01 09:19:51 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm1
+2025-12-01 09:19:51 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm1 will respond to previous message
+2025-12-01 09:19:52 | INFO     | dual_llm_app | continue_conversation:256 | Auto-continuing conversation: llm1 responding to message
+2025-12-01 09:19:52 | INFO     | dual_llm_app | send_message:120 | Processing message from llm1 - Length: 251 chars
+2025-12-01 09:19:52 | INFO     | dual_llm_app | send_message:181 | Calling llm1 API (Model: deepseek-chat)...
+2025-12-01 09:19:52 | INFO     | services.deepseek_service | generate_response:40 | Model name auto-corrected: 'deepseek-chat' -> 'deepseek/deepseek-chat'
+2025-12-01 09:19:52 | INFO     | services.deepseek_service | generate_response:53 | Using OpenRouter API key: *********************************************************************8096 (length: 73)
+2025-12-01 09:19:52 | INFO     | services.deepseek_service | generate_response:95 | Invoking LLM with 12 messages
+2025-12-01 09:20:05 | INFO     | services.deepseek_service | generate_response:97 | LLM response received successfully
+2025-12-01 09:20:05 | INFO     | services.deepseek_service | generate_response:109 | Response generated - Length: 2623 chars
+2025-12-01 09:20:05 | INFO     | dual_llm_app | send_message:188 | Received response from llm1 - Length: 2623 chars
+2025-12-01 09:20:05 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm2
+2025-12-01 09:20:05 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm2 will respond to previous message
+2025-12-01 09:20:06 | INFO     | dual_llm_app | continue_conversation:256 | Auto-continuing conversation: llm2 responding to message
+2025-12-01 09:20:06 | INFO     | dual_llm_app | send_message:120 | Processing message from llm2 - Length: 2623 chars
+2025-12-01 09:20:06 | INFO     | dual_llm_app | send_message:181 | Calling llm2 API (Model: gpt-3.5-turbo)...
+2025-12-01 09:20:06 | INFO     | services.openai_service | generate_response:40 | Model name auto-corrected: 'gpt-3.5-turbo' -> 'openai/gpt-3.5-turbo'
+2025-12-01 09:20:06 | INFO     | services.openai_service | generate_response:53 | Using OpenRouter API key: *********************************************************************67d5 (length: 73)
+2025-12-01 09:20:06 | INFO     | services.openai_service | generate_response:93 | Invoking LLM with 14 messages
+2025-12-01 09:20:08 | INFO     | services.openai_service | generate_response:95 | LLM response received successfully
+2025-12-01 09:20:08 | INFO     | services.openai_service | generate_response:107 | Response generated - Length: 199 chars
+2025-12-01 09:20:08 | INFO     | dual_llm_app | send_message:188 | Received response from llm2 - Length: 199 chars
+2025-12-01 09:20:08 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm1
+2025-12-01 09:20:08 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm1 will respond to previous message
+2025-12-01 09:20:09 | INFO     | dual_llm_app | continue_conversation:256 | Auto-continuing conversation: llm1 responding to message
+2025-12-01 09:20:09 | INFO     | dual_llm_app | send_message:120 | Processing message from llm1 - Length: 199 chars
+2025-12-01 09:20:09 | INFO     | dual_llm_app | send_message:181 | Calling llm1 API (Model: deepseek-chat)...
+2025-12-01 09:20:09 | INFO     | services.deepseek_service | generate_response:40 | Model name auto-corrected: 'deepseek-chat' -> 'deepseek/deepseek-chat'
+2025-12-01 09:20:09 | INFO     | services.deepseek_service | generate_response:53 | Using OpenRouter API key: *********************************************************************8096 (length: 73)
+2025-12-01 09:20:09 | INFO     | services.deepseek_service | generate_response:95 | Invoking LLM with 16 messages
+2025-12-01 09:20:20 | INFO     | services.deepseek_service | generate_response:97 | LLM response received successfully
+2025-12-01 09:20:20 | INFO     | services.deepseek_service | generate_response:109 | Response generated - Length: 2600 chars
+2025-12-01 09:20:20 | INFO     | dual_llm_app | send_message:188 | Received response from llm1 - Length: 2600 chars
+2025-12-01 09:20:20 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm2
+2025-12-01 09:20:20 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm2 will respond to previous message
+2025-12-01 09:20:21 | INFO     | dual_llm_app | continue_conversation:256 | Auto-continuing conversation: llm2 responding to message
+2025-12-01 09:20:21 | INFO     | dual_llm_app | send_message:120 | Processing message from llm2 - Length: 2600 chars
+2025-12-01 09:20:21 | INFO     | dual_llm_app | send_message:181 | Calling llm2 API (Model: gpt-3.5-turbo)...
+2025-12-01 09:20:21 | INFO     | services.openai_service | generate_response:40 | Model name auto-corrected: 'gpt-3.5-turbo' -> 'openai/gpt-3.5-turbo'
+2025-12-01 09:20:21 | INFO     | services.openai_service | generate_response:53 | Using OpenRouter API key: *********************************************************************67d5 (length: 73)
+2025-12-01 09:20:21 | INFO     | services.openai_service | generate_response:93 | Invoking LLM with 18 messages
+2025-12-01 09:20:23 | INFO     | services.openai_service | generate_response:95 | LLM response received successfully
+2025-12-01 09:20:23 | INFO     | services.openai_service | generate_response:107 | Response generated - Length: 200 chars
+2025-12-01 09:20:23 | INFO     | dual_llm_app | send_message:188 | Received response from llm2 - Length: 200 chars
+2025-12-01 09:20:23 | INFO     | dual_llm_app | send_message:214 | Turn switched to llm1
+2025-12-01 09:20:23 | INFO     | dual_llm_app | send_message:229 | Auto-continuing conversation: llm1 will respond to previous message
+2025-12-01 09:20:23 | INFO     | dual_llm_app | handle_conversation_pause:99 | Conversation pause requested
+2025-12-01 09:20:23 | INFO     | dual_llm_app | pause:281 | Conversation paused - auto-continuation stopped
+2025-12-01 09:20:23 | INFO     | dual_llm_app | handle_conversation_pause:102 | Conversation paused
+2025-12-01 09:20:28 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:20:28 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:20:28 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:20:28 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:20:28 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:20:28 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:20:28 | INFO     | dual_llm_app | handle_connect:40 | Client connected: 8KZi7GYw8KlO2SUIAAAB from 127.0.0.1
+2025-12-01 09:23:51 | INFO     | dual_llm_app | <module>:16 | ============================================================
+2025-12-01 09:23:51 | INFO     | dual_llm_app | <module>:17 | Starting Dual LLM Conversation System
+2025-12-01 09:23:51 | INFO     | dual_llm_app | <module>:18 | ============================================================
+2025-12-01 09:23:51 | INFO     | dual_llm_app | __init__:21 | ConversationManager initialized
+2025-12-01 09:23:51 | INFO     | dual_llm_app | <module>:125 | Starting server on port 3000
+2025-12-01 09:23:51 | INFO     | dual_llm_app | <module>:126 | Environment: Production
+2025-12-01 09:23:51 | INFO     | dual_llm_app | handle_connect:40 | Client connected: 6SSRvV52eixRklopAAAB from 127.0.0.1

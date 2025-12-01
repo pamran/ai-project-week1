@@ -1,12 +1,19 @@
 import os
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
+from utils.logger import get_logger
 
 class DeepSeekService:
     def __init__(self, api_key):
+        self.logger = get_logger(__name__)
         self.api_key = api_key
         if not self.api_key:
-            raise ValueError('DeepSeek API key is not configured')
+            self.logger.error("DeepSeekService initialization failed: API key not provided")
+            raise ValueError('OpenRouter API key is not configured')
+        
+        # Mask API key for logging (show only last 4 chars)
+        masked_key = f"{'*' * (len(self.api_key) - 4)}{self.api_key[-4:]}" if len(self.api_key) > 4 else "****"
+        self.logger.info(f"DeepSeekService initialized with API key: {masked_key}")
     
     def generate_response(self, messages, options=None):
         if options is None:
@@ -14,19 +21,62 @@ class DeepSeekService:
         
         temperature = options.get('temperature', 0.7)
         max_tokens = options.get('maxTokens', 1000)
-        model = options.get('model', 'deepseek-chat')
+        # OpenRouter model format: deepseek/deepseek-chat
+        model = options.get('model', 'deepseek/deepseek-chat')
+        
+        # Auto-fix model name if user entered old format
+        original_model = model
+        if model and '/' not in model:
+            # If model doesn't have provider prefix, add it
+            if model.startswith('deepseek-'):
+                model = f"deepseek/{model}"
+            elif model == 'deepseek-chat' or model == 'chat':
+                model = 'deepseek/deepseek-chat'
+            else:
+                # Default to deepseek/deepseek-chat if unclear
+                model = 'deepseek/deepseek-chat'
+            
+            if original_model != model:
+                self.logger.info(f"Model name auto-corrected: '{original_model}' -> '{model}'")
+        
+        self.logger.debug(f"Generating response - Model: {model}, Temperature: {temperature}, Max tokens: {max_tokens}")
         
         try:
-            # DeepSeek uses OpenAI-compatible API, so we can use ChatOpenAI
-            # Set base_url to DeepSeek's endpoint
+            # Verify API key is set and valid before making the call
+            api_key_clean = self.api_key.strip() if self.api_key else ""
+            if not api_key_clean or len(api_key_clean) < 10:
+                self.logger.error(f"API key appears to be invalid - Length: {len(api_key_clean) if api_key_clean else 0}")
+                raise ValueError("Invalid OpenRouter API key - key is missing or too short")
+            
+            # Log API key info (masked for security)
+            masked_key = f"{'*' * (len(api_key_clean) - 4)}{api_key_clean[-4:]}" if len(api_key_clean) > 4 else "****"
+            self.logger.info(f"Using OpenRouter API key: {masked_key} (length: {len(api_key_clean)})")
+            
+            # Check if key starts with expected prefix
+            if not api_key_clean.startswith('sk-or-v1-') and not api_key_clean.startswith('sk-'):
+                self.logger.warning(f"API key doesn't start with expected prefix (sk-or-v1- or sk-)")
+                self.logger.warning(f"Key starts with: {api_key_clean[:10]}...")
+            
+            # Use OpenRouter API endpoint
+            # OpenRouter uses OpenAI-compatible API
+            self.logger.debug(f"Initializing ChatOpenAI with OpenRouter endpoint: https://openrouter.ai/api/v1")
+            
+            # OpenRouter requires Authorization header with Bearer token
+            # The openai_api_key parameter should automatically set this
             llm = ChatOpenAI(
-                model=model,
+                model=model,  # Format: deepseek/deepseek-chat
                 temperature=temperature,
                 max_tokens=max_tokens,
-                openai_api_key=self.api_key,
-                openai_api_base='https://api.deepseek.com/v1',
-                timeout=30
+                openai_api_key=api_key_clean,  # Clean API key without whitespace
+                openai_api_base='https://openrouter.ai/api/v1',  # OpenRouter endpoint
+                timeout=30,
+                default_headers={
+                    "HTTP-Referer": "https://github.com/dual-llm-conversation",
+                    "X-Title": "Dual LLM Conversation System"
+                }
             )
+            self.logger.debug(f"ChatOpenAI initialized successfully with model: {model}")
+            self.logger.debug(f"ChatOpenAI initialized successfully")
             
             # Convert messages to LangChain format
             langchain_messages = []
@@ -42,7 +92,9 @@ class DeepSeekService:
                     langchain_messages.append(AIMessage(content=content))
             
             # Generate response
+            self.logger.info(f"Invoking LLM with {len(langchain_messages)} messages")
             response = llm.invoke(langchain_messages)
+            self.logger.info(f"LLM response received successfully")
             
             # Extract response content
             response_content = response.content if hasattr(response, 'content') else str(response)
@@ -51,6 +103,10 @@ class DeepSeekService:
             usage = {}
             if hasattr(response, 'response_metadata'):
                 usage = response.response_metadata.get('token_usage', {})
+                if usage:
+                    self.logger.debug(f"Token usage: {usage}")
+            
+            self.logger.info(f"Response generated - Length: {len(response_content)} chars")
             
             return {
                 'content': response_content,
@@ -59,11 +115,18 @@ class DeepSeekService:
             }
         except Exception as e:
             error_msg = str(e)
+            self.logger.error(f"DeepSeek API error: {error_msg}", exc_info=True)
+            
             # Handle specific LangChain/API errors
-            if 'api_key' in error_msg.lower() or 'authentication' in error_msg.lower():
-                raise Exception(f'DeepSeek API authentication error: {error_msg}')
+            if 'api_key' in error_msg.lower() or 'authentication' in error_msg.lower() or '401' in error_msg or 'cookie' in error_msg.lower():
+                self.logger.error("Authentication error detected - Check API key")
+                raise Exception(f'OpenRouter API authentication error: {error_msg}')
             elif 'rate limit' in error_msg.lower() or 'quota' in error_msg.lower():
-                raise Exception(f'DeepSeek API rate limit/quota exceeded: {error_msg}')
+                self.logger.error("Rate limit/quota error detected")
+                raise Exception(f'OpenRouter API rate limit/quota exceeded: {error_msg}')
+            elif 'billing' in error_msg.lower() or 'payment' in error_msg.lower():
+                self.logger.error("Billing error detected")
+                raise Exception(f'OpenRouter billing error: {error_msg}')
             else:
-                raise Exception(f'DeepSeek API error: {error_msg}')
+                raise Exception(f'OpenRouter API error: {error_msg}')
 

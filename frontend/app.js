@@ -14,7 +14,7 @@ let conversationState = {
 let llm1Config = {
     provider: 'deepseek',
     apiKey: '',
-    model: 'deepseek-chat',
+    model: 'deepseek/deepseek-chat',  // OpenRouter format
     temperature: 0.7,
     maxTokens: 1000,
     systemPrompt: 'You are a helpful AI assistant.'
@@ -23,7 +23,7 @@ let llm1Config = {
 let llm2Config = {
     provider: 'openai',
     apiKey: '',
-    model: 'gpt-3.5-turbo',
+    model: 'openai/gpt-3.5-turbo',  // OpenRouter format
     temperature: 0.7,
     maxTokens: 1000,
     systemPrompt: 'You are a helpful AI assistant.'
@@ -56,12 +56,14 @@ function initSocket() {
     });
 
     socket.on('message:sent', (data) => {
+        // Update conversation state
         conversationState.history = data.history;
         conversationState.currentTurn = data.currentTurn;
         thinking[data.userMessage.llmId] = false;
         thinking[data.assistantMessage.llmId] = false;
         updateUI();
         hideError();
+        // Note: Auto-continuation is handled on the backend
     });
 
     socket.on('message:thinking', (data) => {
@@ -121,6 +123,38 @@ function toggleConfig(llmId) {
 }
 
 function updateConfig(llmId, key, value) {
+        // Auto-fix model names for OpenRouter format
+        if (key === 'model' && value) {
+            const provider = llmId === 'llm1' ? llm1Config.provider : llm2Config.provider;
+            
+            // If model doesn't have provider prefix, add it
+            if (!value.includes('/')) {
+                if (provider === 'deepseek') {
+                    if (value.startsWith('deepseek-')) {
+                        value = `deepseek/${value}`;
+                    } else if (value === 'deepseek-chat' || value === 'chat') {
+                        value = 'deepseek/deepseek-chat';
+                    } else {
+                        value = `deepseek/${value}`;
+                    }
+                } else if (provider === 'openai') {
+                    if (value.startsWith('gpt-')) {
+                        value = `openai/${value}`;
+                    } else if (value.includes('gpt') || value.includes('turbo')) {
+                        value = `openai/${value}`;
+                    } else {
+                        value = `openai/${value}`;
+                    }
+                }
+                
+                // Update the input field with corrected value
+                const modelInput = document.getElementById(`${llmId}-model`);
+                if (modelInput && modelInput.value !== value) {
+                    modelInput.value = value;
+                }
+            }
+        }
+    
     const config = llmId === 'llm1' ? llm1Config : llm2Config;
     config[key] = value;
 

@@ -1,0 +1,1044 @@
+2025-12-01 08:53:40 | ERROR    | services.openai_service | generate_response:98 | OpenAI API error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 76, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:53:40 | ERROR    | services.openai_service | generate_response:102 | Authentication error detected - Check API key
+2025-12-01 08:53:40 | ERROR    | dual_llm_app | send_message:215 | Error processing message from llm2: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 76, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 172, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 103, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:53:40 | ERROR    | dual_llm_app | handle_message_send:87 | Failed to send message from llm2: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 76, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/app.py", line 83, in handle_message_send
+    conversation_manager.send_message(llm_id, message)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 172, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 103, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:56:17 | ERROR    | services.openai_service | generate_response:98 | OpenAI API error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 76, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:56:17 | ERROR    | services.openai_service | generate_response:102 | Authentication error detected - Check API key
+2025-12-01 08:56:17 | ERROR    | dual_llm_app | send_message:235 | Error processing message from llm2: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 76, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 103, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:56:17 | ERROR    | dual_llm_app | continue_conversation:260 | Error in auto-continue: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 76, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 258, in continue_conversation
+    self.send_message(self.current_turn, message)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 103, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:58:48 | ERROR    | services.openai_service | generate_response:100 | OpenAI API error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 78, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:58:48 | ERROR    | services.openai_service | generate_response:104 | Authentication error detected - Check API key
+2025-12-01 08:58:48 | ERROR    | dual_llm_app | send_message:235 | Error processing message from llm2: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 78, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 105, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 08:58:48 | ERROR    | dual_llm_app | continue_conversation:260 | Error in auto-continue: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 78, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 258, in continue_conversation
+    self.send_message(self.current_turn, message)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 105, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 09:02:09 | ERROR    | services.openai_service | generate_response:106 | OpenAI API error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 84, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 09:02:09 | ERROR    | services.openai_service | generate_response:110 | Authentication error detected - Check API key
+2025-12-01 09:02:09 | ERROR    | dual_llm_app | send_message:235 | Error processing message from llm2: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 84, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 111, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 09:02:09 | ERROR    | dual_llm_app | continue_conversation:260 | Error in auto-continue: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 84, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 258, in continue_conversation
+    self.send_message(self.current_turn, message)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 111, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 09:11:27 | ERROR    | services.openai_service | generate_response:116 | OpenAI API error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 94, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 09:11:27 | ERROR    | services.openai_service | generate_response:120 | Authentication error detected - Check API key
+2025-12-01 09:11:27 | ERROR    | dual_llm_app | send_message:235 | Error processing message from llm2: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 94, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 121, in generate_response
+    raise Exception(f'OpenRouter API authentication error: {error_msg}')
+Exception: OpenRouter API authentication error: Error code: 401 - {'error': {'message': 'No cookie auth credentials found', 'code': 401}}
+2025-12-01 09:16:21 | ERROR    | services.openai_service | generate_response:108 | OpenAI API error: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 86, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-12-01 09:16:21 | ERROR    | services.openai_service | generate_response:115 | Rate limit/quota error detected
+2025-12-01 09:16:21 | ERROR    | dual_llm_app | send_message:235 | Error processing message from llm2: OpenAI API rate limit/quota exceeded: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 86, in generate_response
+    response = llm.invoke(langchain_messages)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 398, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1117, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 927, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_core/language_models/chat_models.py", line 1221, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1356, in _generate
+    raise e
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/langchain_openai/chat_models/base.py", line 1351, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/resources/chat/completions/completions.py", line 1189, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<47 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pamasranjit/Library/Python/3.13/lib/python/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/Mac/ai/ai-project-week1/backend/models/conversation.py", line 182, in send_message
+    response = service.generate_response(api_messages, {
+        'temperature': config.get('temperature', 0.7),
+        'maxTokens': config.get('maxTokens', 1000),
+        'model': config.get('model')
+    })
+  File "/Volumes/Mac/ai/ai-project-week1/backend/services/openai_service.py", line 116, in generate_response
+    raise Exception(f'OpenAI API rate limit/quota exceeded: {error_msg}')
+Exception: OpenAI API rate limit/quota exceeded: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}

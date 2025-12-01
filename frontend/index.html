@@ -54,8 +54,9 @@
                     </div>
                     <div class="config-field">
                         <label>Model:</label>
-                        <input type="text" id="llm1-model" value="deepseek-chat" 
+                        <input type="text" id="llm1-model" value="deepseek/deepseek-chat" 
                                onchange="updateConfig('llm1', 'model', this.value)">
+                        <small style="color: #666; font-size: 0.8rem;">OpenRouter format: deepseek/deepseek-chat</small>
                     </div>
                     <div class="config-field">
                         <label>Temperature: <span id="llm1-temp-value">0.7</span></label>
@@ -95,8 +96,9 @@
                     </div>
                     <div class="config-field">
                         <label>Model:</label>
-                        <input type="text" id="llm2-model" value="gpt-3.5-turbo"
+                        <input type="text" id="llm2-model" value="openai/gpt-3.5-turbo"
                                onchange="updateConfig('llm2', 'model', this.value)">
+                        <small style="color: #666; font-size: 0.8rem;">OpenRouter format: openai/gpt-3.5-turbo</small>
                     </div>
                     <div class="config-field">
                         <label>Temperature: <span id="llm2-temp-value">0.7</span></label>
